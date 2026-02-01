@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Mileage Tracker</title>
-    <meta name="description" content="Get help with Mileage Tracker. FAQs, troubleshooting, and contact information.">
+    <title>Support - MileTracker</title>
+    <meta name="description" content="Get help with MileTracker. FAQ, troubleshooting, and contact support.">
+    
     <style>
         * {
             margin: 0;
@@ -13,360 +14,396 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            color: #1a1a1a;
+            background: #f8fafc;
         }
         
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            padding: 20px 0;
+        /* Navigation */
+        nav {
             background: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        nav {
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #667eea;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3B82F6;
             text-decoration: none;
         }
         
-        .nav-links {
+        .logo span {
+            color: #1a1a1a;
+        }
+        
+        nav ul {
             display: flex;
-            gap: 30px;
             list-style: none;
+            gap: 2rem;
         }
         
-        .nav-links a {
-            color: #333;
+        nav a {
             text-decoration: none;
+            color: #666;
             font-weight: 500;
             transition: color 0.3s;
         }
         
-        .nav-links a:hover {
-            color: #667eea;
+        nav a:hover {
+            color: #3B82F6;
         }
         
-        /* Main Content */
-        main {
-            padding: 60px 0;
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
         }
         
-        h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            color: #2d3748;
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
         
-        .intro {
-            font-size: 18px;
+        .header p {
+            opacity: 0.9;
+        }
+        
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: -2rem auto 4rem;
+            padding: 0 1rem;
+        }
+        
+        /* Contact Card */
+        .contact-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .contact-card h2 {
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        
+        .contact-card p {
             color: #666;
-            margin-bottom: 50px;
+            margin-bottom: 1.5rem;
         }
         
-        h2 {
-            font-size: 32px;
-            margin: 50px 0 30px;
-            color: #2d3748;
+        .contact-btn {
+            display: inline-block;
+            background: #3B82F6;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
         }
         
+        .contact-btn:hover {
+            background: #1D4ED8;
+        }
+        
+        /* FAQ Section */
         .faq-section {
             background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 30px;
+            border-radius: 16px;
+            padding: 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
+        .faq-section h2 {
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+        
         .faq-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.5rem 0;
         }
         
         .faq-item:last-child {
             border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
         }
         
         .faq-question {
-            font-size: 20px;
             font-weight: 600;
-            color: #667eea;
-            margin-bottom: 10px;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #3B82F6;
         }
         
         .faq-answer {
             color: #666;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         
         .faq-answer ul {
-            margin: 15px 0;
-            padding-left: 25px;
+            margin: 1rem 0 1rem 1.5rem;
         }
         
         .faq-answer li {
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
         }
         
-        .contact-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            padding: 50px;
-            text-align: center;
-            color: white;
-        }
-        
-        .contact-section h2 {
-            color: white;
-            margin-top: 0;
-        }
-        
-        .contact-section p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .contact-button {
-            display: inline-block;
-            padding: 15px 40px;
+        /* Troubleshooting */
+        .troubleshooting {
             background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 18px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        .contact-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        .troubleshooting h2 {
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+        
+        .trouble-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .trouble-item h3 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .trouble-item p {
+            color: #666;
+            font-size: 0.95rem;
         }
         
         /* Footer */
         footer {
-            padding: 40px 0;
-            background: #2d3748;
+            background: #1a1a1a;
             color: white;
+            padding: 2rem;
             text-align: center;
         }
         
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links a {
-            color: white;
+        footer a {
+            color: #9ca3af;
             text-decoration: none;
-            transition: opacity 0.3s;
+            margin: 0 1rem;
         }
         
-        .footer-links a:hover {
-            opacity: 0.7;
+        footer a:hover {
+            color: #3B82F6;
+        }
+        
+        footer p {
+            margin-top: 1rem;
+            color: #666;
         }
         
         @media (max-width: 768px) {
-            h1 {
-                font-size: 32px;
-            }
-            
-            h2 {
-                font-size: 26px;
-            }
-            
-            .faq-section,
-            .contact-section {
-                padding: 30px 20px;
-            }
-            
-            .nav-links {
+            nav ul {
                 display: none;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">🚗 Mileage Tracker</a>
-            <ul class="nav-links">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="index.html#how-it-works">How It Works</a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-        <h1>Support & FAQ</h1>
-        <p class="intro">Find answers to common questions and get help with Mileage Tracker.</p>
-
-        <div class="faq-section">
-            <h2>Getting Started</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">How do I enable automatic trip detection?</div>
-                <div class="faq-answer">
-                    To enable automatic trip detection, go to Settings and toggle on "Auto Detection". Make sure to grant location permissions when prompted. The app needs "Always" location access to detect trips in the background.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Why does the app need location permissions?</div>
-                <div class="faq-answer">
-                    Mileage Tracker needs location access to automatically detect when you're driving and record your trips. Your location data stays on your device and is never shared with third parties. We require "Always" permission to detect trips even when the app is in the background.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">How do I set up my work schedule?</div>
-                <div class="faq-answer">
-                    Go to Settings and tap on "Work Schedule". Select your work days and set your start and end times. The app will use this information to automatically classify trips as business or personal based on when they occur.
-                </div>
-            </div>
-        </div>
-
-        <div class="faq-section">
-            <h2>Tracking Trips</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">How accurate is the automatic trip detection?</div>
-                <div class="faq-answer">
-                    The automatic trip detection uses GPS and motion sensors to accurately identify when you're driving. It filters out non-driving activities like walking or biking. Trips are typically detected within seconds of starting to drive.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Can I manually add or edit trips?</div>
-                <div class="faq-answer">
-                    Yes! You can manually add trips by tapping the "+" button on the Trips screen. You can also edit any trip by tapping on it and selecting "Edit". This lets you adjust the purpose, distance, notes, and other details.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">What should I do if a trip isn't detected?</div>
-                <div class="faq-answer">
-                    If a trip isn't automatically detected, you can manually add it. Make sure auto-detection is enabled and that you've granted "Always" location permissions. Very short trips (under 0.1 miles) may not be detected to avoid false positives.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Can I continue a previous trip?</div>
-                <div class="faq-answer">
-                    Yes! If you stop briefly during a trip, you'll receive a notification asking if you want to continue the previous trip or start a new one. You can choose to continue the same trip or start fresh.
-                </div>
-            </div>
-        </div>
-
-        <div class="faq-section">
-            <h2>Reports & Export</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">How do I generate an IRS-compliant report?</div>
-                <div class="faq-answer">
-                    Go to the Reports tab and select the date range you want to report. The app will generate a detailed report including:
-                    <ul>
-                        <li>Trip dates and times</li>
-                        <li>Starting and ending locations</li>
-                        <li>Distance traveled</li>
-                        <li>Business purpose</li>
-                        <li>Total business vs. personal miles</li>
-                    </ul>
-                    You can export this report as a PDF or CSV file.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">What export formats are available?</div>
-                <div class="faq-answer">
-                    Mileage Tracker supports multiple export formats including CSV (for spreadsheets), PDF (for printing and archiving), and JSON (for data backup). Choose the format that works best for your needs.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Can I export data for tax purposes?</div>
-                <div class="faq-answer">
-                    Absolutely! The app generates IRS-compliant reports that include all necessary information for claiming mileage deductions. Export the report as a PDF and keep it with your tax records.
-                </div>
-            </div>
-        </div>
-
-        <div class="faq-section">
-            <h2>Battery & Performance</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">Will this app drain my battery?</div>
-                <div class="faq-answer">
-                    Mileage Tracker is optimized to minimize battery impact. It uses efficient background monitoring that only activates when you're actually driving. Most users report minimal battery impact with typical daily use.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">How much storage does the app use?</div>
-                <div class="faq-answer">
-                    The app itself is small, and trip data is stored efficiently. Even with years of trip history, the app typically uses less than 50MB of storage. You can always export and delete old trips to free up space.
-                </div>
-            </div>
-        </div>
-
-        <div class="faq-section">
-            <h2>Privacy & Security</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">Is my location data private?</div>
-                <div class="faq-answer">
-                    Yes! All your location and trip data is stored locally on your device. We don't upload your location data to any servers or share it with third parties. Your privacy is our top priority.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Can I delete my data?</div>
-                <div class="faq-answer">
-                    Yes, you can delete individual trips or all your data at any time. Go to Settings and use the "Delete All Data" option to completely remove all trips and settings from your device.
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-section">
-            <h2>Still Need Help?</h2>
-            <p>Can't find the answer you're looking for? We're here to help!</p>
-            <a href="mailto:support@mileagetracker.app" class="contact-button">Contact Support</a>
-        </div>
-    </main>
-
-    <footer>
+    <!-- Navigation -->
+    <nav>
         <div class="container">
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
+            <a href="index.html" class="logo">Mile<span>Tracker</span></a>
+            <ul>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
                 <li><a href="support.html">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
             </ul>
-            <p>&copy; 2025 Mileage Tracker. All rights reserved.</p>
         </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="header">
+        <h1>Help & Support</h1>
+        <p>Find answers to common questions or contact our support team</p>
+    </section>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Contact Card -->
+        <div class="contact-card">
+            <h2>Need Help?</h2>
+            <p>Can't find what you're looking for? Our support team is here to help.</p>
+            <a href="mailto:support@essentialdevteam.com" class="contact-btn">
+                📧 Contact Support
+            </a>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How does automatic trip detection work?</div>
+                <div class="faq-answer">
+                    MileTracker uses your iPhone's motion sensors and GPS to detect when you're driving. When you reach driving speed (typically above 15 mph), the app automatically starts recording your trip. When you stop and park, the trip ends automatically.
+                    <br><br>
+                    For this feature to work, you need to:
+                    <ul>
+                        <li>Allow "Always" location access in Settings</li>
+                        <li>Enable Motion & Fitness access</li>
+                        <li>Keep background app refresh enabled</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What are the 2026 IRS mileage rates?</div>
+                <div class="faq-answer">
+                    The 2026 IRS standard mileage rates are:
+                    <ul>
+                        <li><strong>Business:</strong> 72.5 cents per mile</li>
+                        <li><strong>Medical:</strong> 20.5 cents per mile</li>
+                        <li><strong>Charity:</strong> 14 cents per mile</li>
+                        <li><strong>Personal:</strong> Not deductible</li>
+                    </ul>
+                    MileTracker automatically calculates your potential tax deduction based on these rates.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I export my mileage reports?</div>
+                <div class="faq-answer">
+                    Premium subscribers can export reports in multiple formats:
+                    <ul>
+                        <li>Go to the <strong>Reports</strong> tab</li>
+                        <li>Select your desired time period</li>
+                        <li>Tap <strong>Export Report</strong></li>
+                        <li>Choose PDF or CSV format</li>
+                    </ul>
+                    Reports include trip date, start/end locations, distance, category, and calculated deduction.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is my data safe and private?</div>
+                <div class="faq-answer">
+                    Yes! Your data privacy is our priority:
+                    <ul>
+                        <li>All trip data is stored locally on your device</li>
+                        <li>Premium users can optionally sync via iCloud (encrypted)</li>
+                        <li>We never sell or share your location data</li>
+                        <li>You can delete all data at any time from Settings</li>
+                    </ul>
+                    Read our full <a href="privacy.html">Privacy Policy</a> for details.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I cancel my subscription?</div>
+                <div class="faq-answer">
+                    Subscriptions are managed through Apple:
+                    <ul>
+                        <li>Open the <strong>Settings</strong> app on your iPhone</li>
+                        <li>Tap your name at the top</li>
+                        <li>Tap <strong>Subscriptions</strong></li>
+                        <li>Find MileTracker and tap <strong>Cancel Subscription</strong></li>
+                    </ul>
+                    Your premium features will remain active until the end of your billing period.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I restore my purchase on a new device?</div>
+                <div class="faq-answer">
+                    To restore your subscription:
+                    <ul>
+                        <li>Open MileTracker on your new device</li>
+                        <li>Go to <strong>Settings</strong> → <strong>Subscription</strong></li>
+                        <li>Tap <strong>Restore Purchases</strong></li>
+                    </ul>
+                    Make sure you're signed in with the same Apple ID you used for the original purchase.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What counts toward my 15 free trips?</div>
+                <div class="faq-answer">
+                    Free users get 15 trips per calendar month. Each recorded trip (whether auto-detected or manually entered) counts as one trip. The counter resets on the first day of each month. Upgrade to Premium for unlimited trips.
+                </div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="troubleshooting">
+            <h2>Troubleshooting</h2>
+            
+            <div class="trouble-item">
+                <h3>🔴 Trips aren't being detected automatically</h3>
+                <p>Make sure location services are set to "Always" (Settings → Privacy → Location Services → MileTracker → Always). Also ensure Motion & Fitness is enabled and Background App Refresh is on.</p>
+            </div>
+            
+            <div class="trouble-item">
+                <h3>🔴 GPS accuracy seems off</h3>
+                <p>GPS accuracy depends on satellite visibility. Tunnels, tall buildings, and bad weather can affect accuracy. For best results, wait a few seconds after starting the app before beginning your trip.</p>
+            </div>
+            
+            <div class="trouble-item">
+                <h3>🔴 iCloud sync not working</h3>
+                <p>Ensure you're signed into iCloud with the same Apple ID on all devices. Check that iCloud Drive is enabled (Settings → [Your Name] → iCloud → iCloud Drive). Try toggling the sync setting off and on in MileTracker settings.</p>
+            </div>
+            
+            <div class="trouble-item">
+                <h3>🔴 App is draining battery</h3>
+                <p>MileTracker is optimized for low battery usage, but continuous GPS tracking does use power. If you notice unusual drain, try disabling auto-detection when not needed, or set tracking to "Weekdays only" in Configure settings.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="mailto:support@essentialdevteam.com">Contact</a>
+        </div>
+        <p>© 2026 Essential Dev Team. All rights reserved.</p>
     </footer>
 </body>
 </html>

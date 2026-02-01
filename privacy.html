@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Mileage Tracker</title>
-    <meta name="description" content="Privacy Policy for Mileage Tracker - How we handle your data and protect your privacy.">
+    <title>Privacy Policy - MileTracker</title>
+    <meta name="description" content="MileTracker Privacy Policy. Learn how we collect, use, and protect your data.">
+    
     <style>
         * {
             margin: 0;
@@ -13,300 +14,312 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #f8fafc;
         }
         
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            padding: 20px 0;
+        /* Navigation */
+        nav {
             background: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        nav {
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #667eea;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3B82F6;
             text-decoration: none;
         }
         
-        .nav-links {
+        .logo span {
+            color: #1a1a1a;
+        }
+        
+        nav ul {
             display: flex;
-            gap: 30px;
             list-style: none;
+            gap: 2rem;
         }
         
-        .nav-links a {
-            color: #333;
+        nav a {
             text-decoration: none;
+            color: #666;
             font-weight: 500;
             transition: color 0.3s;
         }
         
-        .nav-links a:hover {
-            color: #667eea;
+        nav a:hover {
+            color: #3B82F6;
         }
         
-        /* Main Content */
-        main {
-            padding: 60px 0;
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
         }
         
-        .content-box {
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            opacity: 0.9;
+        }
+        
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 2rem auto 4rem;
+            padding: 0 1rem;
+        }
+        
+        .policy-card {
             background: white;
-            border-radius: 15px;
-            padding: 50px;
+            border-radius: 16px;
+            padding: 3rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-            color: #2d3748;
+        .policy-card h2 {
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .policy-card h2:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        
+        .policy-card p {
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        
+        .policy-card ul {
+            color: #4b5563;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .policy-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .policy-card strong {
+            color: #1a1a1a;
         }
         
         .last-updated {
-            color: #666;
-            margin-bottom: 40px;
-            font-style: italic;
+            background: #f0f9ff;
+            border-left: 4px solid #3B82F6;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0 8px 8px 0;
         }
         
-        h2 {
-            font-size: 28px;
-            margin: 40px 0 20px;
-            color: #667eea;
-        }
-        
-        h3 {
-            font-size: 22px;
-            margin: 30px 0 15px;
-            color: #2d3748;
-        }
-        
-        p {
-            margin-bottom: 20px;
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        ul {
-            margin: 15px 0 20px 25px;
-        }
-        
-        li {
-            margin-bottom: 10px;
-            color: #555;
-        }
-        
-        strong {
-            color: #2d3748;
+        .last-updated p {
+            margin: 0;
+            color: #1e40af;
         }
         
         /* Footer */
         footer {
-            padding: 40px 0;
-            background: #2d3748;
+            background: #1a1a1a;
             color: white;
+            padding: 2rem;
             text-align: center;
-            margin-top: 60px;
         }
         
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links a {
-            color: white;
+        footer a {
+            color: #9ca3af;
             text-decoration: none;
-            transition: opacity 0.3s;
+            margin: 0 1rem;
         }
         
-        .footer-links a:hover {
-            opacity: 0.7;
+        footer a:hover {
+            color: #3B82F6;
+        }
+        
+        footer p {
+            margin-top: 1rem;
+            color: #666;
         }
         
         @media (max-width: 768px) {
-            .content-box {
-                padding: 30px 20px;
-            }
-            
-            h1 {
-                font-size: 32px;
-            }
-            
-            h2 {
-                font-size: 24px;
-            }
-            
-            .nav-links {
+            nav ul {
                 display: none;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .policy-card {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">🚗 Mileage Tracker</a>
-            <ul class="nav-links">
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Mile<span>Tracker</span></a>
+            <ul>
                 <li><a href="index.html#features">Features</a></li>
-                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
                 <li><a href="support.html">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main class="container">
-        <div class="content-box">
-            <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: January 25, 2025</p>
+    <!-- Header -->
+    <section class="header">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy is important to us</p>
+    </section>
 
-            <p>This Privacy Policy describes how Mileage Tracker ("we", "our", or "the app") collects, uses, and protects your information when you use our iOS application.</p>
+    <!-- Content -->
+    <div class="content">
+        <div class="policy-card">
+            <div class="last-updated">
+                <p><strong>Last Updated:</strong> January 1, 2026</p>
+            </div>
 
-            <h2>Information We Collect</h2>
+            <p>Essential Dev Team ("we," "our," or "us") operates the MileTracker mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App.</p>
 
-            <h3>Location Data</h3>
-            <p>Mileage Tracker collects location data to enable automatic trip detection and mileage tracking. This includes:</p>
+            <h2>1. Information We Collect</h2>
+            
+            <p><strong>Location Data:</strong> MileTracker collects location data to track your driving trips and calculate mileage. This includes:</p>
             <ul>
                 <li>GPS coordinates during trips</li>
-                <li>Starting and ending locations</li>
-                <li>Route information and distance traveled</li>
-                <li>Time and date of trips</li>
+                <li>Start and end locations of trips</li>
+                <li>Route information</li>
             </ul>
-
-            <h3>Trip Information</h3>
-            <p>We store information about your trips, including:</p>
+            
+            <p><strong>Motion Data:</strong> We collect motion and fitness data to detect when you start and stop driving, enabling automatic trip detection.</p>
+            
+            <p><strong>Trip Information:</strong> Information you enter about your trips, including:</p>
             <ul>
-                <li>Trip purpose (business or personal)</li>
-                <li>Notes and descriptions you add</li>
-                <li>Odometer readings (if entered)</li>
-                <li>Work schedule settings</li>
+                <li>Trip categories (Business, Medical, Charity, Personal)</li>
+                <li>Notes and tags</li>
+                <li>Vehicle information</li>
+                <li>Odometer readings</li>
             </ul>
+            
+            <p><strong>Account Information:</strong> If you subscribe to premium features, Apple processes your payment. We receive a subscription status but not payment details.</p>
 
-            <h3>App Usage Data</h3>
-            <p>We may collect basic usage information such as:</p>
+            <h2>2. How We Use Your Information</h2>
+            
+            <p>We use your information solely to provide and improve the MileTracker service:</p>
             <ul>
-                <li>App settings and preferences</li>
-                <li>Feature usage patterns</li>
-                <li>Crash reports and diagnostics (anonymous)</li>
+                <li>Track and record your driving trips</li>
+                <li>Calculate mileage and tax deductions</li>
+                <li>Generate mileage reports</li>
+                <li>Sync data across your devices (if enabled)</li>
+                <li>Improve app functionality and user experience</li>
             </ul>
 
-            <h2>How We Use Your Information</h2>
-
-            <p>Your information is used exclusively to provide and improve the app's functionality:</p>
+            <h2>3. Data Storage and Security</h2>
+            
+            <p><strong>Local Storage:</strong> All trip data is stored locally on your device by default. We do not have access to your local data.</p>
+            
+            <p><strong>iCloud Sync:</strong> Premium subscribers who enable iCloud sync will have their data stored in their personal iCloud account. This data is encrypted by Apple and accessible only to you.</p>
+            
+            <p><strong>We Do Not:</strong></p>
             <ul>
-                <li><strong>Trip Tracking:</strong> To automatically detect, record, and categorize your trips</li>
-                <li><strong>Report Generation:</strong> To create IRS-compliant mileage reports</li>
-                <li><strong>Work Schedule:</strong> To automatically classify trips based on your work hours</li>
-                <li><strong>Notifications:</strong> To alert you about detected trips and app activity</li>
-                <li><strong>App Improvement:</strong> To identify bugs and improve app performance</li>
+                <li>Store your data on our servers</li>
+                <li>Have access to your trip history</li>
+                <li>Sell or share your location data with third parties</li>
+                <li>Use your data for advertising purposes</li>
             </ul>
 
-            <h2>Data Storage and Security</h2>
-
-            <h3>Local Storage</h3>
-            <p><strong>All your location and trip data is stored locally on your device.</strong> We do not upload your location data or trip information to any external servers. Your data stays completely private and under your control.</p>
-
-            <h3>iCloud Sync (Optional)</h3>
-            <p>If you enable iCloud sync, your trip data will be securely stored in your personal iCloud account and synced across your devices. This data is encrypted and protected by Apple's security measures. We do not have access to your iCloud data.</p>
-
-            <h3>Data Security</h3>
-            <p>We implement appropriate security measures to protect your data:</p>
+            <h2>4. Data Sharing</h2>
+            
+            <p>We do not sell, trade, or otherwise transfer your personal information to third parties. Your trip data remains on your device or in your personal iCloud account.</p>
+            
+            <p>We may share information only in the following circumstances:</p>
             <ul>
-                <li>All data is stored using iOS secure storage APIs</li>
-                <li>Location tracking uses standard iOS privacy protections</li>
-                <li>No third-party analytics or tracking services</li>
-                <li>No advertisements or data collection for marketing purposes</li>
+                <li>When required by law or legal process</li>
+                <li>To protect our rights or property</li>
+                <li>With your explicit consent</li>
             </ul>
 
-            <h2>Data Sharing</h2>
+            <h2>5. Your Rights and Choices</h2>
+            
+            <p><strong>Location Permissions:</strong> You can control location access through your device settings. Disabling location access will prevent automatic trip tracking.</p>
+            
+            <p><strong>Data Deletion:</strong> You can delete all your trip data at any time through the app's Settings. Deleting the app will also remove all local data.</p>
+            
+            <p><strong>iCloud Data:</strong> If you use iCloud sync, you can manage or delete this data through your iCloud settings.</p>
+            
+            <p><strong>Export:</strong> Premium subscribers can export their data in standard formats (CSV, PDF) at any time.</p>
 
-            <p><strong>We do not share, sell, or disclose your personal information or location data to third parties.</strong> Your data remains private and is never transmitted outside of your device except as described in the iCloud Sync section above (which is optional and under your control).</p>
+            <h2>6. Children's Privacy</h2>
+            
+            <p>MileTracker is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.</p>
 
-            <h2>Your Rights and Choices</h2>
-
-            <h3>Location Permissions</h3>
-            <p>You can manage location permissions at any time through your iPhone's Settings app. Revoking location access will disable automatic trip detection but will not delete your existing trip data.</p>
-
-            <h3>Data Deletion</h3>
-            <p>You can delete your data at any time:</p>
+            <h2>7. Third-Party Services</h2>
+            
+            <p>MileTracker uses the following third-party services:</p>
             <ul>
-                <li><strong>Individual Trips:</strong> Swipe left on any trip and tap Delete</li>
-                <li><strong>All Data:</strong> Go to Settings > Delete All Data to completely remove all trips and reset the app</li>
-                <li><strong>Uninstalling:</strong> Deleting the app from your device will remove all local data</li>
+                <li><strong>Apple MapKit:</strong> For displaying maps and routes</li>
+                <li><strong>Apple StoreKit:</strong> For processing subscriptions</li>
+                <li><strong>Apple CloudKit:</strong> For optional iCloud sync</li>
             </ul>
+            <p>These services are governed by Apple's privacy policy.</p>
 
-            <h3>Export Your Data</h3>
-            <p>You can export all your trip data at any time in CSV, PDF, or JSON format from the Reports section.</p>
+            <h2>8. Changes to This Policy</h2>
+            
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
-            <h2>Third-Party Services</h2>
-
-            <p>Mileage Tracker does not use any third-party analytics, advertising, or tracking services. The app operates entirely on your device.</p>
-
-            <h3>Apple Services</h3>
-            <p>The app uses Apple's built-in services:</p>
+            <h2>9. Contact Us</h2>
+            
+            <p>If you have questions about this Privacy Policy or our data practices, please contact us:</p>
             <ul>
-                <li><strong>Core Location:</strong> For GPS tracking (subject to Apple's privacy policies)</li>
-                <li><strong>iCloud:</strong> For optional data sync (if enabled by you)</li>
-                <li><strong>StoreKit:</strong> For in-app purchases (subject to Apple's privacy policies)</li>
+                <li><strong>Email:</strong> <a href="mailto:privacy@essentialdevteam.com">privacy@essentialdevteam.com</a></li>
+                <li><strong>Website:</strong> <a href="https://essentialdevteam.com">essentialdevteam.com</a></li>
             </ul>
 
-            <h2>Children's Privacy</h2>
-
-            <p>Mileage Tracker is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
-
-            <h2>Changes to This Policy</h2>
-
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the app and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
-
-            <h2>California Privacy Rights</h2>
-
-            <p>If you are a California resident, you have certain rights regarding your personal information under the California Consumer Privacy Act (CCPA). Since we do not sell your personal information and all data is stored locally on your device, most CCPA provisions do not apply. However, you always have the right to request deletion of your data (which you can do directly in the app).</p>
-
-            <h2>Contact Us</h2>
-
-            <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us at:</p>
-
-            <p>
-                <strong>Email:</strong> support@mileagetracker.app<br>
-                <strong>Website:</strong> <a href="support.html" style="color: #667eea;">Support Page</a>
-            </p>
-
-            <h2>Consent</h2>
-
-            <p>By using Mileage Tracker, you consent to this Privacy Policy and agree to its terms.</p>
+            <h2>10. California Privacy Rights</h2>
+            
+            <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information is collected and the right to delete your personal information. Since we store data locally on your device, you have full control over your data at all times.</p>
         </div>
-    </main>
+    </div>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
-            <p>&copy; 2025 Mileage Tracker. All rights reserved.</p>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="mailto:support@essentialdevteam.com">Contact</a>
         </div>
+        <p>© 2026 Essential Dev Team. All rights reserved.</p>
     </footer>
 </body>
 </html>

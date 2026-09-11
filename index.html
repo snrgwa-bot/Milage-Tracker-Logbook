@@ -348,7 +348,30 @@
                 font-size: 1rem;
             }
         }
-    </style>
+    
+        /* Large displays: the shell was pinned at 1200px, which on a 2560px
+           monitor reads as a narrow column adrift in empty space. Widen the
+           shell AND scale the root font size, so type and spacing grow
+           together — widening alone just stretches the gaps. The hero
+           paragraph and the rates block keep their own narrower measure, so
+           line length stays readable however wide the window gets. */
+        @media (min-width: 1500px) {
+            :root { font-size: 17.5px; }
+            nav .container,
+            .features,
+            footer .container { max-width: 1440px; }
+            .pricing { max-width: 1200px; }
+            .rates .container { max-width: 900px; }
+        }
+        @media (min-width: 2000px) {
+            :root { font-size: 19px; }
+            nav .container,
+            .features,
+            footer .container { max-width: 1680px; }
+            .pricing { max-width: 1360px; }
+            .rates .container { max-width: 960px; }
+        }
+</style>
 </head>
 <body>
     <!-- Navigation -->

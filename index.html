@@ -1,542 +1,268 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MileTracker - Automatic Mileage Tracking for Tax Deductions</title>
-    <meta name="description" content="MileTracker automatically tracks your driving miles for tax deductions. Perfect for business, medical, and charity trips. IRS compliant mileage logs.">
-    <meta name="keywords" content="mileage tracker, tax deduction, IRS mileage, business miles, automatic trip tracking, iOS app">
-    <link rel="canonical" href="https://essentialdevteam.github.io/miletracker/">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="MileTracker - Automatic Mileage Tracking">
-    <meta property="og:description" content="Track your driving miles automatically for tax deductions. IRS compliant.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://essentialdevteam.github.io/miletracker/">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-        }
-        
-        /* Navigation */
-        nav {
-            background: white;
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #3B82F6;
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: #1a1a1a;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #666;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #3B82F6;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            color: white;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        
-        .app-store-btn {
-            display: inline-block;
-            background: black;
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s;
-        }
-        
-        .app-store-btn:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1a1a1a;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background: #f8fafc;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-        }
-        
-        .feature-card p {
-            color: #666;
-        }
-        
-        /* IRS Rates Section */
-        .rates {
-            background: #f8fafc;
-            padding: 5rem 2rem;
-        }
-        
-        .rates .container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .rates h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .rates-subtitle {
-            color: #666;
-            margin-bottom: 2rem;
-        }
-        
-        .rate-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-        }
-        
-        .rate-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .rate-card .icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .rate-card .type {
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-        
-        .rate-card .rate {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #3B82F6;
-        }
-        
-        .rate-card .unit {
-            font-size: 0.875rem;
-            color: #666;
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            padding: 5rem 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .pricing h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .pricing-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .pricing-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .pricing-card.featured {
-            border-color: #3B82F6;
-            position: relative;
-        }
-        
-        .pricing-card.featured::before {
-            content: 'Best Value';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #3B82F6;
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        
-        .pricing-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .pricing-card .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #3B82F6;
-        }
-        
-        .pricing-card .period {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-        
-        .pricing-card ul {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 1.5rem;
-        }
-        
-        .pricing-card li {
-            padding: 0.5rem 0;
-            color: #666;
-        }
-        
-        .pricing-card li::before {
-            content: '✓';
-            color: #22c55e;
-            margin-right: 0.5rem;
-            font-weight: bold;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 3rem 2rem;
-        }
-        
-        footer .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        
-        footer h4 {
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        
-        footer a {
-            color: #9ca3af;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
-        }
-        
-        footer a:hover {
-            color: #3B82F6;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid #333;
-            color: #666;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-    
-        /* Large displays: the shell was pinned at 1200px, which on a 2560px
-           monitor reads as a narrow column adrift in empty space. Widen the
-           shell AND scale the root font size, so type and spacing grow
-           together — widening alone just stretches the gaps. The hero
-           paragraph and the rates block keep their own narrower measure, so
-           line length stays readable however wide the window gets. */
-        @media (min-width: 1500px) {
-            :root { font-size: 17.5px; }
-            nav .container,
-            .features,
-            footer .container { max-width: 1440px; }
-            .pricing { max-width: 1200px; }
-            .rates .container { max-width: 900px; }
-        }
-        @media (min-width: 2000px) {
-            :root { font-size: 19px; }
-            nav .container,
-            .features,
-            footer .container { max-width: 1680px; }
-            .pricing { max-width: 1360px; }
-            .rates .container { max-width: 960px; }
-        }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MileTracker: Automatic Mileage Log for IRS Deductions</title>
+<meta name="description" content="MileTracker detects your drives automatically, sorts them in a tap and builds an IRS-ready mileage log with 2026 rates. PDF, CSV and Excel reports for your accountant.">
+<link rel="canonical" href="https://snrgwa-bot.github.io/Milage-Tracker-Logbook/">
+<meta property="og:title" content="MileTracker: Automatic Mileage Log for IRS Deductions">
+<meta property="og:description" content="MileTracker detects your drives automatically, sorts them in a tap and builds an IRS-ready mileage log with 2026 rates. PDF, CSV and Excel reports for your accountant.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://snrgwa-bot.github.io/Milage-Tracker-Logbook/press/social-1d.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E1220" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F5EF" media="(prefers-color-scheme: light)">
+<meta name="apple-itunes-app" content="app-id=6758228735">
+<link rel="icon" href="img/app-icon.png">
+<link rel="apple-touch-icon" href="img/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">Mile<span>Tracker</span></a>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-            </ul>
-        </div>
-    </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/app-icon.png" alt="" width="32" height="32">MileTracker</a>
+    <nav class="nav" aria-label="Main"><a href="index.html#how">How it works</a><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a><a href="accountants.html">For accountants</a><a href="blog/irs-mileage-rules.html">IRS rules</a><a href="support.html">Support</a></nav>
+    <a class="btn btn-primary btn-sm" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.54 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>Get the app</a>
+  </div>
+</header>
+<main id="main">
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Track Miles. Maximize Deductions.</h1>
-        <p>Automatically track your driving mileage for tax deductions. Perfect for business owners, freelancers, medical trips, and charitable work.</p>
-        <a href="https://apps.apple.com/us/app/id6758228735" class="app-store-btn">
-            📱 Download on the App Store
-        </a>
-    </section>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Mileage log for iPhone</p>
+      <h1 style="margin-top:18px">Every mile logged. Every dollar <em>found.</em></h1>
+      <p class="lede">MileTracker detects your drives automatically, lets you sort them with one tap, and hands your accountant an IRS-ready log at tax time.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.54 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>Download on the App Store</a>
+        <a class="btn btn-ghost" href="get-started.html">Estimate my deduction</a>
+      </div>
+      <p class="fine">Free to download &middot; Premium includes a 7-day free trial &middot; iPhone and Apple Watch</p>
+    </div>
+    <div class="hero-phones">
+      <img class="p2" src="img/screen-summary.png" alt="MileTracker summary screen" width="600" height="1303">
+      <img class="p1" src="img/screen-home.png" alt="MileTracker Review screen showing trips to review and potential deduction" width="600" height="1303">
+      <div class="milo"><svg class="milo-svg" viewBox="-6 -6 132 104" role="img" aria-label="Milo, the MileTracker car mascot"><ellipse cx="60" cy="90" rx="46" ry="4" fill="rgba(0,0,0,.18)"/><g class="milo-bob"><path d="M26 50V38Q26 10 54 10H62Q92 10 92 40V50Z" fill="var(--milo,#3DDC97)"/><path d="M33 46V38Q33 16 55 16H61Q85 16 85 40V46Z" fill="var(--milo-face,#E6FFF3)"/><ellipse cx="48.5" cy="29" rx="3.5" ry="5" fill="#141414"/><ellipse cx="69.5" cy="29" rx="3.5" ry="5" fill="#141414"/><ellipse cx="41.5" cy="36" rx="3.5" ry="2" fill="rgba(255,110,130,.55)"/><ellipse cx="77.5" cy="36" rx="3.5" ry="2" fill="rgba(255,110,130,.55)"/><path d="M54.5 35.5q5.5 6 11 0" fill="none" stroke="#141414" stroke-width="2.5" stroke-linecap="round"/><rect x="6" y="42" width="108" height="32" rx="15" fill="var(--milo,#3DDC97)"/><rect x="58" y="46" width="2" height="22" fill="rgba(0,0,0,.10)"/><rect x="64" y="50" width="8" height="3" rx="1.5" fill="rgba(0,0,0,.16)"/><rect x="100" y="50" width="10" height="7" rx="3.5" fill="#FFF6C8"/><rect x="9" y="50" width="6" height="7" rx="3" fill="#FF5A5A"/><circle cx="33" cy="75" r="13" fill="#141414"/><rect x="32" y="65" width="2" height="20" rx="1" fill="#C9C9C9"/><rect x="23" y="74" width="20" height="2" rx="1" fill="#C9C9C9"/><circle cx="33" cy="75" r="5" fill="#C9C9C9"/><circle cx="87" cy="75" r="13" fill="#141414"/><rect x="86" y="65" width="2" height="20" rx="1" fill="#C9C9C9"/><rect x="77" y="74" width="20" height="2" rx="1" fill="#C9C9C9"/><circle cx="87" cy="75" r="5" fill="#C9C9C9"/></g></svg></div>
+    </div>
+  </div>
+</div>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2>Why MileTracker?</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🚗</div>
-                <h3>Automatic Trip Detection</h3>
-                <p>MileTracker detects when you start driving and automatically records your trips. No more forgetting to log miles.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📍</div>
-                <h3>GPS Route Tracking</h3>
-                <p>Accurate GPS tracking shows your exact route on a map. Every trip is recorded with start and end locations.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>IRS Compliant</h3>
-                <p>Generate IRS-compliant mileage logs for tax deductions. Supports 2026 standard mileage rates.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Reports & Export</h3>
-                <p>Export detailed reports in PDF or CSV format. Perfect for tax filing or expense reimbursement.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏷️</div>
-                <h3>Categories & Tags</h3>
-                <p>Organize trips by category (Business, Medical, Charity, Personal) and add custom tags for easy filtering.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">☁️</div>
-                <h3>iCloud Sync</h3>
-                <p>Your data syncs across all your devices with iCloud. Never lose your mileage records.</p>
-            </div>
-        </div>
-    </section>
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b class="mono">72.5&cent;</b><span>per business mile, 2026 IRS standard rate</span></div>
+    <div class="fact"><b class="mono">20.5&cent; &middot; 14&cent;</b><span>per medical and per charity mile</span></div>
+    <div class="fact"><b>PDF &middot; CSV &middot; Excel</b><span>reports ready for your accountant</span></div>
+  </div>
+</div>
 
-    <!-- IRS Rates Section -->
-    <section class="rates">
-        <div class="container">
-            <h2>2026 IRS Standard Mileage Rates</h2>
-            <p class="rates-subtitle">MileTracker automatically calculates your deductions using official IRS rates</p>
-            <div class="rate-cards">
-                <div class="rate-card">
-                    <div class="icon">💼</div>
-                    <div class="type">Business</div>
-                    <div class="rate">72.5¢</div>
-                    <div class="unit">per mile</div>
-                </div>
-                <div class="rate-card">
-                    <div class="icon">🏥</div>
-                    <div class="type">Medical</div>
-                    <div class="rate">20.5¢</div>
-                    <div class="unit">per mile</div>
-                </div>
-                <div class="rate-card">
-                    <div class="icon">❤️</div>
-                    <div class="type">Charity</div>
-                    <div class="rate">14¢</div>
-                    <div class="unit">per mile</div>
-                </div>
-                <div class="rate-card">
-                    <div class="icon">🏠</div>
-                    <div class="type">Personal</div>
-                    <div class="rate">—</div>
-                    <div class="unit">not deductible</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="how">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">How it works</p><h2>Drive. Tap. Done.</h2></div>
+    <div class="steps">
+      <article class="card step"><span class="n">01</span><h3>Just drive</h3><p>Milo notices when you start driving and records the route in the background.</p><div class="shot"><img src="img/screen-live.png" alt="Live trip recording screen" loading="lazy" width="600" height="1303"></div></article><article class="card step"><span class="n">02</span><h3>Tap to sort</h3><p>Business, medical, charity or personal. Suggestions learn the places you visit.</p><div class="shot"><img src="img/screen-review.png" alt="Trip review screen with category buttons" loading="lazy" width="600" height="1303"></div></article><article class="card step"><span class="n">03</span><h3>Export at tax time</h3><p>A clean, IRS-ready report with every trip, total and deduction.</p><div class="shot"><img src="img/screen-summary.png" alt="Summary screen with yearly deduction" loading="lazy" width="600" height="1303"></div></article>
+    </div>
+  </div>
+</section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <h2>Simple, Transparent Pricing</h2>
-        <p class="pricing-subtitle">Start free with 15 trips/month. Upgrade for unlimited tracking.</p>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Free</h3>
-                <div class="price">$0</div>
-                <div class="period">15 trips/month</div>
-                <ul>
-                    <li>15 trips per month</li>
-                    <li>Manual trip entry</li>
-                    <li>Basic auto-detection</li>
-                    <li>Category assignment</li>
-                    <li>Trip history</li>
-                </ul>
-            </div>
-            <div class="pricing-card">
-                <h3>Monthly</h3>
-                <div class="price">$9.99</div>
-                <div class="period">per month</div>
-                <ul>
-                    <li>Unlimited trips</li>
-                    <li>iCloud sync</li>
-                    <li>Export PDF/CSV</li>
-                    <li>Advanced analytics</li>
-                    <li>Priority support</li>
-                </ul>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Yearly</h3>
-                <div class="price">$89.99</div>
-                <div class="period">per year (save 25%)</div>
-                <ul>
-                    <li>Unlimited trips</li>
-                    <li>iCloud sync</li>
-                    <li>Export PDF/CSV</li>
-                    <li>Advanced analytics</li>
-                    <li>Priority support</li>
-                </ul>
-            </div>
+<section id="calculator" style="padding-top:0">
+  <div class="wrap">
+    <div class="card calc">
+      <div>
+        <p class="eyebrow">Savings calculator</p>
+        <h2>How much are you leaving on the road?</h2>
+        <div class="chips" role="group" aria-label="What do you drive for?">
+          <button class="chip" data-m="400" aria-pressed="false">Rideshare &amp; delivery</button>
+          <button class="chip" data-m="200" aria-pressed="true">Sales &amp; field</button>
+          <button class="chip" data-m="250" aria-pressed="false">Real estate</button>
+          <button class="chip" data-m="300" aria-pressed="false">Home health</button>
+          <button class="chip" data-m="225" aria-pressed="false">Trades</button>
         </div>
-    </section>
+        <div class="range-row"><label for="miles">Business miles per week</label><output id="milesOut" for="miles">200 mi</output></div>
+        <input id="miles" type="range" min="10" max="800" step="10" value="200">
+      </div>
+      <div class="calc-result" aria-live="polite">
+        <div class="milo"><svg class="milo-svg" viewBox="-6 -6 132 104" role="img" aria-label="Milo, the MileTracker car mascot"><ellipse cx="60" cy="90" rx="46" ry="4" fill="rgba(0,0,0,.18)"/><g class="milo-bob"><path d="M26 50V38Q26 10 54 10H62Q92 10 92 40V50Z" fill="var(--milo,#3DDC97)"/><path d="M33 46V38Q33 16 55 16H61Q85 16 85 40V46Z" fill="var(--milo-face,#E6FFF3)"/><path d="M44.5 31.5q4-5 8 0" fill="none" stroke="#141414" stroke-width="2.5" stroke-linecap="round"/><path d="M65.5 31.5q4-5 8 0" fill="none" stroke="#141414" stroke-width="2.5" stroke-linecap="round"/><ellipse cx="41.5" cy="36" rx="3.5" ry="2" fill="rgba(255,110,130,.55)"/><ellipse cx="77.5" cy="36" rx="3.5" ry="2" fill="rgba(255,110,130,.55)"/><path d="M53 34h13v2a6.5 6 0 0 1-13 0z" fill="#141414"/><path d="M56 38.5a3.5 2.2 0 0 1 7 0a3.5 2 0 0 1-7 0z" fill="#FF7A8A"/><rect x="6" y="42" width="108" height="32" rx="15" fill="var(--milo,#3DDC97)"/><rect x="58" y="46" width="2" height="22" fill="rgba(0,0,0,.10)"/><rect x="64" y="50" width="8" height="3" rx="1.5" fill="rgba(0,0,0,.16)"/><rect x="100" y="50" width="10" height="7" rx="3.5" fill="#FFF6C8"/><rect x="9" y="50" width="6" height="7" rx="3" fill="#FF5A5A"/><circle cx="33" cy="75" r="13" fill="#141414"/><rect x="32" y="65" width="2" height="20" rx="1" fill="#C9C9C9"/><rect x="23" y="74" width="20" height="2" rx="1" fill="#C9C9C9"/><circle cx="33" cy="75" r="5" fill="#C9C9C9"/><circle cx="87" cy="75" r="13" fill="#141414"/><rect x="86" y="65" width="2" height="20" rx="1" fill="#C9C9C9"/><rect x="77" y="74" width="20" height="2" rx="1" fill="#C9C9C9"/><circle cx="87" cy="75" r="5" fill="#C9C9C9"/></g><rect x="4" y="4" width="9" height="9" rx="2" fill="#6EA8FF" transform="rotate(45 8.5 8.5)"/><rect x="104" y="0" width="11" height="11" rx="2" fill="#FFC24B" transform="rotate(45 109.5 5.5)"/></svg></div>
+        <p class="eyebrow" style="color:var(--ink-2)">Potential yearly deduction</p>
+        <div class="big" id="proj">$6,960</div>
+        <small id="projNote">9,600 mi/yr &times; $0.725 &middot; estimate, not tax advice</small>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735" style="margin-top:12px">Start capturing it</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div>
-                <h4>MileTracker</h4>
-                <p style="color: #9ca3af;">Automatic mileage tracking for tax deductions.</p>
-            </div>
-            <div>
-                <h4>Legal</h4>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-            </div>
-            <div>
-                <h4>Support</h4>
-                <a href="support.html">Help & FAQ</a>
-                <a href="mailto:essentialdevteam@gmail.com">Contact Us</a>
-            </div>
-            <div>
-                <h4>Company</h4>
-                <p style="color: #9ca3af;">Essential Dev Team</p>
-                <a href="https://essentialdevteam.com">essentialdevteam.com</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 MileTracker. All rights reserved.</p>
-        </div>
-    </footer>
+<section id="features" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Features</p><h2>Built for people who drive for work.</h2></div>
+    <div class="features">
+      <article class="card feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></div><h3>Automatic trip detection</h3><p>Trips start and stop on their own using motion and GPS. No buttons to remember.</p></article><article class="card feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Categorise in a tap</h3><p>Business, medical, charity or personal. On-device suggestions learn your regular stops.</p></article><article class="card feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></div><h3>IRS-ready reports</h3><p>PDF, CSV and Excel with date, places, miles, purpose and deduction for every trip.</p></article><article class="card feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14v-5l-2-5H7l-2 5z"/><path d="M3 12h18"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div><h3>Multiple vehicles</h3><p>Separate odometers and logs for each car you drive for work.</p></article><article class="card feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v16"/><path d="M3 21h13"/><path d="M15 9h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V8l-3-3"/><path d="M7 7h5v4H7z"/></svg></div><h3>Fuel, expenses & maintenance</h3><p>Log fill-ups, repairs, tolls and parking to see what driving really costs.</p></article><article class="card feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><h3>Accountant live link</h3><p>Share a private, read-only link to your log instead of emailing PDFs.</p></article><article class="card feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></div><h3>Widgets</h3><p>Today's miles and deduction on your Home Screen and Lock Screen.</p></article><article class="card feature"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 6l1-3h4l1 3M9 18l1 3h4l1-3"/><path d="M12 10v2l1.5 1.5"/></svg></div><h3>Apple Watch</h3><p>Glance at the trip you're on from your wrist.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="themes" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Make it yours</p><h2>Five themes. One Milo.</h2><p>Pick the look you like, from Midnight to Paper. Switch any time in Settings.</p></div>
+    <div class="themes">
+      <figure><img src="img/screen-home.png" alt="Midnight theme" loading="lazy" width="600" height="1303"><figcaption>Midnight</figcaption></figure>
+      <figure><img src="img/screen-paper-summary.png" alt="Paper theme" loading="lazy" width="600" height="1303"><figcaption>Paper</figcaption></figure>
+      <figure><img src="img/screen-electric-trips.png" alt="Electric theme" loading="lazy" width="600" height="1303"><figcaption>Electric</figcaption></figure>
+      <figure><img src="img/screen-highway-live.png" alt="Highway theme" loading="lazy" width="600" height="1303"><figcaption>Highway</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="accountant" style="padding-top:0">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">For your accountant</p>
+      <h2>Send a link, not a pile of PDFs.</h2>
+      <p class="lede">Create a private live link in the app. Your accountant opens it in any browser and sees your trips and totals as you log them.</p>
+      <ul class="ticks">
+        <li><span><b>No sign-up for anyone.</b> The link is the access.</span></li>
+        <li><span><b>Personal trips hidden</b> by default.</span></li>
+        <li><span><b>CSV download</b> when they need it.</span></li>
+        <li><span><b>Turn it off any time.</b> Links expire after 180 days.</span></li>
+      </ul>
+      <p style="margin-top:24px"><a href="accountants.html">How the live link works &rarr;</a></p>
+    </div>
+    <div class="shot"><img src="img/screen-accountant.png" alt="Accountant access screen in MileTracker" loading="lazy" width="600" height="1303"></div>
+  </div>
+</section>
+
+<section id="pricing" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head center"><p class="eyebrow">Pricing</p><h2>Pays for itself on the first few drives.</h2></div>
+    <div class="center"><div class="toggle" role="group" aria-label="Billing period">
+      <button type="button" data-plan="yearly" aria-pressed="true">Yearly</button>
+      <button type="button" data-plan="monthly" aria-pressed="false">Monthly</button>
+    </div></div>
+    <div class="tiers">
+      <article class="card tier">
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <p class="note">For occasional work drives</p>
+        <ul class="ticks">
+          <li>15 trips a month</li>
+          <li>Automatic trip detection</li>
+          <li>One-tap categories</li>
+          <li>Summary of miles and deductions</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735">Download free</a>
+      </article>
+      <article class="card tier pro">
+        <span class="badge" id="saveBadge">SAVE 30%</span>
+        <h3>Premium</h3>
+        <div class="price"><span id="pPrice">$49.99</span> <small id="pPer">/ year</small></div>
+        <p class="note" id="pNote">7-day free trial, then $49.99 a year</p>
+        <ul class="ticks">
+          <li>Unlimited trips, logged automatically</li>
+          <li>IRS-ready PDF, CSV &amp; Excel reports</li>
+          <li>iCloud sync across your devices</li>
+          <li>Everything in Free</li>
+        </ul>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735">Start 7-day free trial</a>
+      </article>
+    </div>
+    <p class="price-fine">Weekly, monthly and yearly plans are available in the app. US prices shown; see the App Store for current prices in your region. Subscriptions renew automatically until cancelled in your Apple ID settings.</p>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head center"><p class="eyebrow">Questions</p><h2>Good to know</h2></div>
+    <div class="faq">
+      <details><summary>Does it drain my battery?</summary><div class="a"><p>MileTracker uses motion sensors to wake GPS only when you start driving. You can choose Economy, Balanced or Rocket tracking in Settings to trade precision for battery.</p></div></details><details><summary>Is the log IRS-ready?</summary><div class="a"><p>Each trip records the date, start and end place, distance and the purpose you choose, close to the time of the drive. That is what the IRS asks a mileage log to show. Export a PDF, CSV or Excel file whenever you need it.</p></div></details><details><summary>What happens to personal trips?</summary><div class="a"><p>Mark them Personal with one tap. They are left out of deduction totals and can be left out of reports and the accountant link.</p></div></details><details><summary>Can my accountant see my log?</summary><div class="a"><p>Yes, if you want. Create an accountant link in the app and your accountant can view and download your trips in a browser, with no account. You can turn the link off at any time. <a href="accountants.html">How the live link works</a>.</p></div></details><details><summary>How does the free trial work?</summary><div class="a"><p>Premium starts with a 7-day free trial through the App Store. Cancel in your iPhone's subscription settings before the trial ends and you won't be charged.</p></div></details>
+    </div>
+    <p class="center" style="margin-top:24px"><a href="support.html">More answers in Help &amp; FAQ &rarr;</a></p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="card band">
+      <div class="milo"><svg class="milo-svg" viewBox="-6 -6 132 104" role="img" aria-label="Milo, the MileTracker car mascot"><ellipse cx="60" cy="90" rx="46" ry="4" fill="rgba(0,0,0,.18)"/><g class="milo-bob"><path d="M26 50V38Q26 10 54 10H62Q92 10 92 40V50Z" fill="var(--milo,#3DDC97)"/><path d="M33 46V38Q33 16 55 16H61Q85 16 85 40V46Z" fill="var(--milo-face,#E6FFF3)"/><ellipse cx="48.5" cy="29" rx="3.5" ry="5" fill="#141414"/><ellipse cx="69.5" cy="29" rx="3.5" ry="5" fill="#141414"/><ellipse cx="41.5" cy="36" rx="3.5" ry="2" fill="rgba(255,110,130,.55)"/><ellipse cx="77.5" cy="36" rx="3.5" ry="2" fill="rgba(255,110,130,.55)"/><path d="M54.5 35.5q5.5 6 11 0" fill="none" stroke="#141414" stroke-width="2.5" stroke-linecap="round"/><rect x="6" y="42" width="108" height="32" rx="15" fill="var(--milo,#3DDC97)"/><rect x="58" y="46" width="2" height="22" fill="rgba(0,0,0,.10)"/><rect x="64" y="50" width="8" height="3" rx="1.5" fill="rgba(0,0,0,.16)"/><rect x="100" y="50" width="10" height="7" rx="3.5" fill="#FFF6C8"/><rect x="9" y="50" width="6" height="7" rx="3" fill="#FF5A5A"/><circle cx="33" cy="75" r="13" fill="#141414"/><rect x="32" y="65" width="2" height="20" rx="1" fill="#C9C9C9"/><rect x="23" y="74" width="20" height="2" rx="1" fill="#C9C9C9"/><circle cx="33" cy="75" r="5" fill="#C9C9C9"/><circle cx="87" cy="75" r="13" fill="#141414"/><rect x="86" y="65" width="2" height="20" rx="1" fill="#C9C9C9"/><rect x="77" y="74" width="20" height="2" rx="1" fill="#C9C9C9"/><circle cx="87" cy="75" r="5" fill="#C9C9C9"/></g></svg></div>
+      <div class="grow">
+        <h2>Your next work drive is worth claiming.</h2>
+        <p>Set it up in two minutes. Milo handles the rest.</p>
+      </div>
+      <a class="btn btn-primary" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.54 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>Get MileTracker</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var RATE = 0.725, WEEKS = 48;
+  var range = document.getElementById('miles'), out = document.getElementById('milesOut');
+  var proj = document.getElementById('proj'), note = document.getElementById('projNote');
+  var chips = document.querySelectorAll('.chip');
+  function fmt(n) { return n.toLocaleString('en-US'); }
+  function update() {
+    var m = +range.value;
+    out.textContent = (m >= 800 ? '800+' : m) + ' mi';
+    proj.textContent = '$' + fmt(Math.round(m * WEEKS * RATE));
+    note.textContent = fmt(m * WEEKS) + ' mi/yr \u00d7 $0.725 \u00b7 estimate, not tax advice';
+  }
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      chips.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      c.setAttribute('aria-pressed', 'true');
+      range.value = c.dataset.m; update();
+    });
+  });
+  range.addEventListener('input', function () {
+    chips.forEach(function (x) { x.setAttribute('aria-pressed', x.dataset.m === range.value ? 'true' : 'false'); });
+    update();
+  });
+  var plans = {
+    yearly: ['$49.99', '/ year', '7-day free trial, then $49.99 a year', false],
+    monthly: ['$5.99', '/ month', '7-day free trial, then $5.99 a month', true]
+  };
+  document.querySelectorAll('[data-plan]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('[data-plan]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var p = plans[b.dataset.plan];
+      document.getElementById('pPrice').textContent = p[0];
+      document.getElementById('pPer').textContent = p[1];
+      document.getElementById('pNote').textContent = p[2];
+      document.getElementById('saveBadge').hidden = p[3];
+    });
+  });
+})();
+</script>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><img src="img/app-icon.png" alt="" width="32" height="32">MileTracker</a>
+        <p>Automatic mileage tracking for people who drive for work. Made by Essential Dev Team (Dumitru Bumbu).</p>
+      </div>
+      <div><h4>App</h4><ul>
+        <li><a href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735">App Store</a></li>
+        <li><a href="get-started.html">Savings estimate</a></li>
+        <li><a href="sample-report.html">Sample report</a></li>
+        <li><a href="accountants.html">For accountants</a></li>
+      </ul></div>
+      <div><h4>Learn</h4><ul>
+        <li><a href="blog/irs-mileage-rules.html">IRS mileage rules 2026</a></li>
+        <li><a href="support.html">Help &amp; FAQ</a></li>
+        <li><a href="press/index.html">Press kit</a></li>
+      </ul></div>
+      <div><h4>Legal</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="mailto:essentialdevteam@gmail.com">essentialdevteam@gmail.com</a></li>
+      </ul></div>
+    </div>
+    <div class="legal"><span>&copy; 2026 Essential Dev Team. All rights reserved.</span><span>MileTracker is a record-keeping tool, not tax advice. Talk to a tax professional about your situation.</span></div>
+  </div>
+</footer>
 </body>
 </html>

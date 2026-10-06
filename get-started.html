@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estimate Your Mileage Deduction | MileTracker</title>
+<meta name="description" content="Answer two questions and see your estimated yearly mileage deduction at the 2026 IRS rate of 72.5 cents per business mile.">
+<link rel="canonical" href="https://snrgwa-bot.github.io/Milage-Tracker-Logbook/get-started.html">
+<meta property="og:title" content="Estimate Your Mileage Deduction | MileTracker">
+<meta property="og:description" content="Answer two questions and see your estimated yearly mileage deduction at the 2026 IRS rate of 72.5 cents per business mile.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://snrgwa-bot.github.io/Milage-Tracker-Logbook/press/social-1d.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E1220" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F5EF" media="(prefers-color-scheme: light)">
+<meta name="apple-itunes-app" content="app-id=6758228735">
+<link rel="icon" href="img/app-icon.png">
+<link rel="apple-touch-icon" href="img/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/app-icon.png" alt="" width="32" height="32">MileTracker</a>
+    <nav class="nav" aria-label="Main"><a href="index.html#how">How it works</a><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a><a href="accountants.html">For accountants</a><a href="blog/irs-mileage-rules.html">IRS rules</a><a href="support.html">Support</a></nav>
+    <a class="btn btn-primary btn-sm" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.54 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>Get the app</a>
+  </div>
+</header>
+<main id="main">
+<style>
+.gs { padding: 48px 0 24px; }
+.gs .wrap { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start; }
+.progress { display: flex; gap: 6px; margin-bottom: 28px; max-width: 360px; }
+.progress span { flex: 1; height: 6px; border-radius: 3px; background: var(--line); transition: background .3s; }
+.progress span.on { background: var(--accent); }
+.gs h1 { font-size: clamp(36px, 5vw, 60px); font-weight: 700; margin-top: 12px; }
+.gs .sub { color: var(--ink-2); margin: 12px 0 28px; font-size: 18px; }
+.jobs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.job { display: flex; flex-direction: column; gap: 14px; padding: 18px; min-height: 112px; border-radius: 18px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); border: 2px solid transparent; cursor: pointer; color: var(--ink); font: 600 16px var(--sans); text-align: left; transition: border-color .2s, transform .15s; }
+.job[aria-pressed="true"] { border-color: var(--accent); transform: scale(1.02); }
+.job .e { font-size: 24px; line-height: 1; }
+.stepper[hidden] { display: none; }
+.actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+.actions .btn-primary { flex: 1; min-width: 200px; min-height: 58px; }
+.big-miles { font: 700 clamp(56px, 9vw, 96px)/1 var(--mono); letter-spacing: -.04em; margin: 8px 0 18px; }
+.big-miles small { font-size: 20px; color: var(--ink-2); font-family: var(--sans); font-weight: 500; letter-spacing: 0; }
+.estimate { font: 700 clamp(60px, 10vw, 112px)/1 var(--sans); letter-spacing: -.05em; color: var(--accent-text); font-variant-numeric: tabular-nums; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
+.kpi { padding: 16px 18px; }
+.kpi span { display: block; color: var(--ink-2); font-size: 13px; }
+.kpi b { font: 600 20px var(--mono); }
+.side { padding: 24px; position: sticky; top: 88px; background: linear-gradient(160deg, var(--card-2), var(--card)); }
+.side .say { display: flex; gap: 14px; align-items: center; }
+.side .say .milo { flex: 0 0 96px; }
+.bubble { background: var(--bg); border-radius: 14px; padding: 12px 14px; font-size: 15px; color: var(--ink); }
+.side dl { margin: 20px 0 0; display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 16px; }
+.side dl div { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
+.side dt { color: var(--ink-2); } .side dd { margin: 0; font-weight: 700; text-align: right; }
+.side dd.hi { color: var(--accent-text); font-family: var(--mono); }
+.next { margin-top: 28px; display: grid; gap: 10px; counter-reset: n; padding: 0; list-style: none; }
+.next li { counter-increment: n; display: flex; gap: 14px; padding: 16px 18px; align-items: flex-start; }
+.next li::before { content: counter(n); flex: 0 0 28px; height: 28px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 14px/28px var(--sans); text-align: center; }
+.next li p { color: var(--ink-2); font-size: 15px; } .next li b { display: block; }
+@media (max-width: 900px) { .gs .wrap { grid-template-columns: 1fr; } .side { position: static; } }
+@media (max-width: 560px) { .jobs { grid-template-columns: repeat(2, 1fr); } .kpis { grid-template-columns: 1fr; } }
+</style>
+<div class="gs"><div class="wrap">
+ <div>
+  <div class="progress" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+  <div class="stepper" data-step="0">
+    <p class="eyebrow">Free savings estimate &middot; Step 1 of 3</p>
+    <h1>What do you drive for?</h1>
+    <p class="sub">Takes 30 seconds. We'll estimate your yearly deduction at the 2026 IRS rate.</p>
+    <div class="jobs" role="group" aria-label="What do you drive for?">
+      <button type="button" class="job" data-miles="400" aria-pressed="false"><span class="e" aria-hidden="true">&#128661;</span>Rideshare &amp; delivery</button><button type="button" class="job" data-miles="200" aria-pressed="false"><span class="e" aria-hidden="true">&#128188;</span>Sales &amp; field work</button><button type="button" class="job" data-miles="250" aria-pressed="false"><span class="e" aria-hidden="true">&#127969;</span>Real estate</button><button type="button" class="job" data-miles="300" aria-pressed="false"><span class="e" aria-hidden="true">&#129658;</span>Home health visits</button><button type="button" class="job" data-miles="225" aria-pressed="false"><span class="e" aria-hidden="true">&#128295;</span>Trades &amp; contracting</button><button type="button" class="job" data-miles="150" aria-pressed="false"><span class="e" aria-hidden="true">&#10022;</span>Something else</button>
+    </div>
+    <div class="actions"><button class="btn btn-primary" id="to1" disabled>Continue</button></div>
+  </div>
+  <div class="stepper" data-step="1" hidden>
+    <p class="eyebrow">Step 2 of 3</p>
+    <h1>How many work miles in a typical week?</h1>
+    <p class="sub">Commuting to a regular office doesn't count. Driving between clients, sites and patients does.</p>
+    <div class="big-miles"><output id="gsMiles">200</output> <small>mi / week</small></div>
+    <label class="muted" for="gsRange" style="font-size:14px">Weekly business miles</label>
+    <input id="gsRange" type="range" min="10" max="800" step="10" value="200">
+    <div class="chips" style="margin-top:14px"><button type="button" class="chip" data-v="50" aria-pressed="false">50 mi</button><button type="button" class="chip" data-v="150" aria-pressed="false">150 mi</button><button type="button" class="chip" data-v="300" aria-pressed="false">300 mi</button><button type="button" class="chip" data-v="500" aria-pressed="false">500 mi</button></div>
+    <div class="actions"><button class="btn btn-ghost" data-back>Back</button><button class="btn btn-primary" id="to2">See my estimate</button></div>
+  </div>
+  <div class="stepper" data-step="2" hidden>
+    <p class="eyebrow">Step 3 of 3 &middot; Your estimate</p>
+    <div class="estimate" id="gsEst" aria-live="polite">$0</div>
+    <p class="sub" style="margin-top:10px">potential deduction per year &middot; <span id="gsYear"></span></p>
+    <div class="kpis">
+      <div class="card kpi"><span>Per month</span><b id="gsMonth"></b></div>
+      <div class="card kpi"><span>Per work day</span><b id="gsDay"></b></div>
+      <div class="card kpi"><span>Premium, yearly plan</span><b id="gsPct"></b></div>
+    </div>
+    <div class="actions"><button class="btn btn-ghost" data-back>Back</button><a class="btn btn-primary" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.54 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>Get MileTracker &middot; 7-day free trial</a></div>
+    <ol class="next">
+      <li class="card"><div><b>Install and allow &ldquo;Always&rdquo; location + Motion</b><p>That's what lets trips start and stop on their own, even when the app is closed.</p></div></li>
+      <li class="card"><div><b>Just drive</b><p>Trips land in Pending. Tap Business, Medical, Charity or Personal.</p></div></li>
+      <li class="card"><div><b>Export or share at tax time</b><p>PDF, CSV or Excel &mdash; or a live link for your accountant.</p></div></li>
+    </ol>
+    <p class="muted" style="font-size:13px;margin-top:18px">Estimate = weekly miles &times; 48 weeks &times; $0.725 (2026 IRS business rate). It's an estimate, not tax advice. Prices: see the App Store for current prices.</p>
+  </div>
+ </div>
+ <aside class="card side" aria-label="Your summary">
+  <div class="say"><div class="milo"><svg class="milo-svg" viewBox="-6 -6 132 104" role="img" aria-label="Milo, the MileTracker car mascot"><ellipse cx="60" cy="90" rx="46" ry="4" fill="rgba(0,0,0,.18)"/><g class="milo-bob"><path d="M26 50V38Q26 10 54 10H62Q92 10 92 40V50Z" fill="var(--milo,#3DDC97)"/><path d="M33 46V38Q33 16 55 16H61Q85 16 85 40V46Z" fill="var(--milo-face,#E6FFF3)"/><ellipse cx="48.5" cy="29" rx="3.5" ry="5" fill="#141414"/><ellipse cx="69.5" cy="29" rx="3.5" ry="5" fill="#141414"/><ellipse cx="41.5" cy="36" rx="3.5" ry="2" fill="rgba(255,110,130,.55)"/><ellipse cx="77.5" cy="36" rx="3.5" ry="2" fill="rgba(255,110,130,.55)"/><path d="M54.5 35.5q5.5 6 11 0" fill="none" stroke="#141414" stroke-width="2.5" stroke-linecap="round"/><rect x="6" y="42" width="108" height="32" rx="15" fill="var(--milo,#3DDC97)"/><rect x="58" y="46" width="2" height="22" fill="rgba(0,0,0,.10)"/><rect x="64" y="50" width="8" height="3" rx="1.5" fill="rgba(0,0,0,.16)"/><rect x="100" y="50" width="10" height="7" rx="3.5" fill="#FFF6C8"/><rect x="9" y="50" width="6" height="7" rx="3" fill="#FF5A5A"/><circle cx="33" cy="75" r="13" fill="#141414"/><rect x="32" y="65" width="2" height="20" rx="1" fill="#C9C9C9"/><rect x="23" y="74" width="20" height="2" rx="1" fill="#C9C9C9"/><circle cx="33" cy="75" r="5" fill="#C9C9C9"/><circle cx="87" cy="75" r="13" fill="#141414"/><rect x="86" y="65" width="2" height="20" rx="1" fill="#C9C9C9"/><rect x="77" y="74" width="20" height="2" rx="1" fill="#C9C9C9"/><circle cx="87" cy="75" r="5" fill="#C9C9C9"/></g></svg></div><p class="bubble" id="gsSay">Hi, I'm Milo. I ride along and log your work drives.</p></div>
+  <dl>
+    <div><dt>Work</dt><dd id="sJob">&mdash;</dd></div>
+    <div><dt>Weekly miles</dt><dd id="sMiles">&mdash;</dd></div>
+    <div><dt>Est. deduction</dt><dd id="sEst" class="hi">&mdash;</dd></div>
+  </dl>
+ </aside>
+</div></div>
+<script>
+(function () {
+  var RATE = 0.725, WEEKS = 48, YEARLY = 49.99;
+  var st = { step: 0, job: null, miles: 200 };
+  var $ = function (id) { return document.getElementById(id); };
+  var say = ["Hi, I'm Milo. I ride along and log your work drives.", "Guess high if you're not sure. Most people undercount.", ""];
+  function money(n, d) { return '$' + n.toLocaleString('en-US', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
+  function show(n) {
+    st.step = n;
+    document.querySelectorAll('.stepper').forEach(function (s) { s.hidden = +s.dataset.step !== n; });
+    document.querySelectorAll('.progress span').forEach(function (s, i) { s.classList.toggle('on', i <= n); });
+    if (n === 2) count();
+    paint(); window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function paint() {
+    var proj = st.miles * WEEKS * RATE;
+    $('gsMiles').textContent = st.miles >= 800 ? '800+' : st.miles;
+    $('sJob').textContent = st.job || '\u2014';
+    $('sMiles').textContent = st.step >= 1 ? st.miles + ' mi' : '\u2014';
+    $('sEst').textContent = st.step >= 2 ? money(proj) + '/yr' : '\u2014';
+    $('gsYear').textContent = (st.miles * WEEKS).toLocaleString('en-US') + ' work miles';
+    $('gsMonth').textContent = money(proj / 12);
+    $('gsDay').textContent = money(proj / 240, 2);
+    $('gsPct').textContent = proj > 0 ? (YEARLY / proj * 100).toFixed(1) + '% of it' : '\u2014';
+    $('gsSay').textContent = st.step === 2 ? "That's " + money(proj / 12) + " a month you could claim. Let's catch every mile." : say[st.step];
+    document.querySelectorAll('[data-v]').forEach(function (c) { c.setAttribute('aria-pressed', +c.dataset.v === st.miles ? 'true' : 'false'); });
+  }
+  function count() {
+    var target = st.miles * WEEKS * RATE, t0 = performance.now(), el = $('gsEst');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = money(target); return; }
+    (function f(t) { var p = Math.min(1, (t - t0) / 1100); el.textContent = money(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); })(t0);
+  }
+  document.querySelectorAll('.job').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.job').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      st.job = b.lastChild.textContent.trim(); st.miles = +b.dataset.miles; $('gsRange').value = st.miles; $('to1').disabled = false; paint();
+    });
+  });
+  $('to1').addEventListener('click', function () { show(1); });
+  $('to2').addEventListener('click', function () { show(2); });
+  document.querySelectorAll('[data-back]').forEach(function (b) { b.addEventListener('click', function () { show(st.step - 1); }); });
+  $('gsRange').addEventListener('input', function (e) { st.miles = +e.target.value; paint(); });
+  document.querySelectorAll('[data-v]').forEach(function (c) { c.addEventListener('click', function () { st.miles = +c.dataset.v; $('gsRange').value = st.miles; paint(); }); });
+  paint();
+})();
+</script>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><img src="img/app-icon.png" alt="" width="32" height="32">MileTracker</a>
+        <p>Automatic mileage tracking for people who drive for work. Made by Essential Dev Team (Dumitru Bumbu).</p>
+      </div>
+      <div><h4>App</h4><ul>
+        <li><a href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735">App Store</a></li>
+        <li><a href="get-started.html">Savings estimate</a></li>
+        <li><a href="sample-report.html">Sample report</a></li>
+        <li><a href="accountants.html">For accountants</a></li>
+      </ul></div>
+      <div><h4>Learn</h4><ul>
+        <li><a href="blog/irs-mileage-rules.html">IRS mileage rules 2026</a></li>
+        <li><a href="support.html">Help &amp; FAQ</a></li>
+        <li><a href="press/index.html">Press kit</a></li>
+      </ul></div>
+      <div><h4>Legal</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="mailto:essentialdevteam@gmail.com">essentialdevteam@gmail.com</a></li>
+      </ul></div>
+    </div>
+    <div class="legal"><span>&copy; 2026 Essential Dev Team. All rights reserved.</span><span>MileTracker is a record-keeping tool, not tax advice. Talk to a tax professional about your situation.</span></div>
+  </div>
+</footer>
+</body>
+</html>

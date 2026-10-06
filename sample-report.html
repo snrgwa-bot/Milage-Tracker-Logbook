@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Mileage Report (IRS-Ready PDF) | MileTracker</title>
+<meta name="description" content="See a sample monthly mileage report from MileTracker: deduction by category at 2026 IRS rates, daily miles and a full trip log with odometer readings.">
+<link rel="canonical" href="https://snrgwa-bot.github.io/Milage-Tracker-Logbook/sample-report.html">
+<meta property="og:title" content="Sample Mileage Report (IRS-Ready PDF) | MileTracker">
+<meta property="og:description" content="See a sample monthly mileage report from MileTracker: deduction by category at 2026 IRS rates, daily miles and a full trip log with odometer readings.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://snrgwa-bot.github.io/Milage-Tracker-Logbook/press/social-1d.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E1220" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F5EF" media="(prefers-color-scheme: light)">
+<meta name="apple-itunes-app" content="app-id=6758228735">
+<link rel="icon" href="img/app-icon.png">
+<link rel="apple-touch-icon" href="img/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/app-icon.png" alt="" width="32" height="32">MileTracker</a>
+    <nav class="nav" aria-label="Main"><a href="index.html#how">How it works</a><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a><a href="accountants.html">For accountants</a><a href="blog/irs-mileage-rules.html">IRS rules</a><a href="support.html">Support</a></nav>
+    <a class="btn btn-primary btn-sm" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.54 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>Get the app</a>
+  </div>
+</header>
+<main id="main">
+<style>
+.rep-wrap { padding: 40px 0 24px; }
+.rep-intro { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+.rep-intro h1 { font-size: clamp(34px, 5vw, 56px); font-weight: 700; }
+.sheet { --p-ink: #1A1814; --p-ink2: #5E574B; --p-line: rgba(26,24,20,.12); background: #FFFDF8; color: var(--p-ink); border-radius: 6px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.45), 0 0 0 1px rgba(0,0,0,.06); padding: 48px; max-width: 900px; margin: 0 auto 28px; font-size: 14px; }
+.sheet .muted { color: var(--p-ink2); }
+.sheet header { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+.sheet .logo { display: flex; gap: 10px; align-items: center; font-weight: 700; font-size: 18px; }
+.sheet .logo img { width: 34px; height: 34px; border-radius: 9px; }
+.sheet .logo small { display: block; font-size: 10px; letter-spacing: .12em; color: var(--p-ink2); font-weight: 600; }
+.sheet h2 { font-size: 40px; margin: 6px 0 4px; letter-spacing: -.03em; }
+.sheet .kick { color: #11804F; font-size: 11px; font-weight: 700; letter-spacing: .14em; margin-top: 28px; }
+.meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; border-top: 1px solid var(--p-line); border-bottom: 1px solid var(--p-line); padding: 14px 0; margin: 20px 0; }
+.meta div { display: flex; gap: 16px; padding: 3px 0; } .meta span { color: var(--p-ink2); width: 110px; flex: none; }
+.tiles { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 10px; }
+.tile { background: #F3EFE6; border-radius: 12px; padding: 14px 16px; } .tile.hi { background: #E3F6EC; }
+.tile span { font-size: 10px; font-weight: 700; letter-spacing: .12em; color: var(--p-ink2); display: block; }
+.tile b { font: 600 24px 'Geist Mono', monospace; letter-spacing: -.02em; }
+.tile.hi b { font: 700 32px var(--sans); color: #0E6B42; }
+.sheet table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.sheet th { text-align: left; font-size: 11px; color: var(--p-ink2); font-weight: 600; border-bottom: 1.5px solid var(--p-ink); padding: 6px 6px; }
+.sheet td { padding: 7px 6px; border-bottom: 1px solid var(--p-line); }
+.sheet .num, .sheet td:nth-child(n+2) { font-variant-numeric: tabular-nums; }
+.sheet tfoot td { border-top: 1.5px solid var(--p-ink); border-bottom: 0; font-weight: 700; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+.chart { display: flex; align-items: flex-end; gap: 3px; height: 90px; margin-top: 12px; border-bottom: 1px solid var(--p-line); }
+.bar { flex: 1; height: 100%; display: flex; flex-direction: column-reverse; }
+.bar span { display: block; background: #1F9D68; }
+.log { font-size: 12px; min-width: 720px; } .log td:nth-child(1), .log td:nth-child(2) { white-space: nowrap; font-family: 'Geist Mono', monospace; font-size: 11.5px; }
+.sig { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; margin-top: 24px; font-size: 11px; color: var(--p-ink2); }
+.sig .line { border-top: 1px solid var(--p-ink); padding-top: 6px; margin-top: 36px; display: flex; justify-content: space-between; }
+.sheet footer { margin-top: 28px; display: flex; justify-content: space-between; font-size: 11px; color: var(--p-ink2); border-top: 1px solid var(--p-line); padding-top: 12px; }
+.sample-tag { background: #FFE9A8; color: #6B4E00; font-size: 11px; font-weight: 700; letter-spacing: .1em; padding: 4px 9px; border-radius: 6px; }
+@media (max-width: 720px) { .sheet { padding: 22px 16px; } .meta { grid-template-columns: 1fr; } .tiles { grid-template-columns: 1fr 1fr; } .sig { grid-template-columns: 1fr; } .sheet h2 { font-size: 30px; } }
+@media print {
+  .site-head, .site-foot, .rep-intro, .no-print { display: none !important; }
+  body { background: #fff; }
+  .sheet { box-shadow: none; max-width: none; padding: 0; margin: 0; page-break-after: always; }
+}
+</style>
+<div class="wrap rep-wrap">
+  <div class="rep-intro">
+    <div><p class="eyebrow">Sample report</p><h1>This is what your accountant gets.</h1>
+    <p class="muted" style="margin-top:10px;max-width:640px">A monthly Mileage report exported from MileTracker as a PDF. The driver, business and trips below are made-up sample data.</p></div>
+    <div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-ghost" onclick="window.print()">Print</button><a class="btn btn-primary" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.54 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>Make yours</a></div>
+  </div>
+
+  <div class="sheet">
+    <header>
+      <div class="logo"><img src="img/app-icon.png" alt=""><div>MileTracker<small>IRS-READY MILEAGE LOG</small></div></div>
+      <div style="text-align:right" class="muted mono"><span class="sample-tag">SAMPLE DATA</span><br>Generated Oct 31, 2026</div>
+    </header>
+    <p class="kick">VEHICLE MILEAGE REPORT</p>
+    <h2>October 2026</h2>
+    <p class="muted">October 1 &ndash; October 31, 2026 &middot; Tax year 2026</p>
+    <div class="meta">
+      <div><span>Driver</span><b>Sample Driver</b></div><div><span>Vehicle</span><b>Sample sedan</b></div>
+      <div><span>Business</span><b>Sample Home Health LLC</b></div><div><span>Odometer start</span><b class="mono">24,118.0</b></div>
+      <div><span>Report</span><b class="mono">Mileage &middot; PDF</b></div><div><span>Odometer end</span><b class="mono">24,805.7</b></div>
+    </div>
+    <div class="tiles">
+      <div class="tile hi"><span>POTENTIAL DEDUCTION</span><b>$289.91</b></div>
+      <div class="tile"><span>TOTAL MILES</span><b>462.1</b></div>
+      <div class="tile"><span>DEDUCTIBLE MI</span><b>441.8</b></div>
+      <div class="tile"><span>TRIPS</span><b>44</b></div>
+    </div>
+    <p class="kick">BY CATEGORY</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Category</th><th>Trips</th><th>Miles</th><th>Rate</th><th>Deduction</th></tr></thead>
+      <tbody><tr><td><i class="dot" style="background:#2F6FE0"></i>Business</td><td>28</td><td>385.4</td><td>$0.725</td><td><b>$279.41</b></td></tr><tr><td><i class="dot" style="background:#D93A4C"></i>Medical</td><td>7</td><td>40.0</td><td>$0.205</td><td><b>$8.20</b></td></tr><tr><td><i class="dot" style="background:#7A4FD6"></i>Charity</td><td>2</td><td>16.4</td><td>$0.140</td><td><b>$2.30</b></td></tr><tr><td><i class="dot" style="background:#8A8274"></i>Personal</td><td>7</td><td>20.3</td><td>&ndash;</td><td><b>&ndash;</b></td></tr></tbody>
+      <tfoot><tr><td>Total</td><td>44</td><td>462.1</td><td></td><td>$289.91</td></tr></tfoot>
+    </table></div>
+    <p class="kick">DAILY MILES <span class="muted" style="font-weight:500;letter-spacing:0">&middot; deductible in green</span></p>
+    <div class="chart" aria-hidden="true"><div class="bar" title="Oct 1"><span style="height:0%;background:#CFC8B8"></span><span style="height:75%"></span></div><div class="bar" title="Oct 2"><span style="height:8%;background:#CFC8B8"></span><span style="height:16%"></span></div><div class="bar" title="Oct 3"><span style="height:0%;background:#CFC8B8"></span><span style="height:0%"></span></div><div class="bar" title="Oct 4"><span style="height:0%;background:#CFC8B8"></span><span style="height:0%"></span></div><div class="bar" title="Oct 5"><span style="height:0%;background:#CFC8B8"></span><span style="height:31%"></span></div><div class="bar" title="Oct 6"><span style="height:0%;background:#CFC8B8"></span><span style="height:50%"></span></div><div class="bar" title="Oct 7"><span style="height:8%;background:#CFC8B8"></span><span style="height:15%"></span></div><div class="bar" title="Oct 8"><span style="height:0%;background:#CFC8B8"></span><span style="height:39%"></span></div><div class="bar" title="Oct 9"><span style="height:0%;background:#CFC8B8"></span><span style="height:74%"></span></div><div class="bar" title="Oct 10"><span style="height:0%;background:#CFC8B8"></span><span style="height:0%"></span></div><div class="bar" title="Oct 11"><span style="height:0%;background:#CFC8B8"></span><span style="height:0%"></span></div><div class="bar" title="Oct 12"><span style="height:8%;background:#CFC8B8"></span><span style="height:16%"></span></div><div class="bar" title="Oct 13"><span style="height:0%;background:#CFC8B8"></span><span style="height:50%"></span></div><div class="bar" title="Oct 14"><span style="height:0%;background:#CFC8B8"></span><span style="height:52%"></span></div><div class="bar" title="Oct 15"><span style="height:0%;background:#CFC8B8"></span><span style="height:92%"></span></div><div class="bar" title="Oct 16"><span style="height:0%;background:#CFC8B8"></span><span style="height:49%"></span></div><div class="bar" title="Oct 17"><span style="height:0%;background:#CFC8B8"></span><span style="height:0%"></span></div><div class="bar" title="Oct 18"><span style="height:0%;background:#CFC8B8"></span><span style="height:0%"></span></div><div class="bar" title="Oct 19"><span style="height:0%;background:#CFC8B8"></span><span style="height:100%"></span></div><div class="bar" title="Oct 20"><span style="height:8%;background:#CFC8B8"></span><span style="height:58%"></span></div><div class="bar" title="Oct 21"><span style="height:8%;background:#CFC8B8"></span><span style="height:17%"></span></div><div class="bar" title="Oct 22"><span style="height:0%;background:#CFC8B8"></span><span style="height:99%"></span></div><div class="bar" title="Oct 23"><span style="height:8%;background:#CFC8B8"></span><span style="height:34%"></span></div><div class="bar" title="Oct 24"><span style="height:0%;background:#CFC8B8"></span><span style="height:0%"></span></div><div class="bar" title="Oct 25"><span style="height:0%;background:#CFC8B8"></span><span style="height:0%"></span></div><div class="bar" title="Oct 26"><span style="height:0%;background:#CFC8B8"></span><span style="height:77%"></span></div><div class="bar" title="Oct 27"><span style="height:0%;background:#CFC8B8"></span><span style="height:56%"></span></div><div class="bar" title="Oct 28"><span style="height:8%;background:#CFC8B8"></span><span style="height:58%"></span></div><div class="bar" title="Oct 29"><span style="height:0%;background:#CFC8B8"></span><span style="height:55%"></span></div><div class="bar" title="Oct 30"><span style="height:0%;background:#CFC8B8"></span><span style="height:93%"></span></div><div class="bar" title="Oct 31"><span style="height:0%;background:#CFC8B8"></span><span style="height:0%"></span></div></div>
+    <div class="sig">
+      <p>Each trip was recorded close to the time of the drive by MileTracker using GPS, with date, start and end place, distance and purpose. Rates: 2026 IRS standard mileage rates. Medical and charity rates apply to qualifying trips only. This report is a record of mileage, not tax advice.</p>
+      <div class="line"><span>Driver signature</span><span>Date</span></div>
+    </div>
+    <footer><span>Made with MileTracker</span><span>Page 1 of 2</span></footer>
+  </div>
+
+  <div class="sheet">
+    <header><div class="logo"><img src="img/app-icon.png" alt=""><div>MileTracker<small>TRIP LOG &middot; OCTOBER 2026</small></div></div><div class="muted">Sample Driver &middot; Sample sedan</div></header>
+    <div class="table-scroll" style="margin-top:16px"><table class="log">
+      <thead><tr><th>Date</th><th>Time</th><th>Route</th><th>Purpose</th><th>Odometer</th><th>Miles</th><th>Deduction</th></tr></thead>
+      <tbody><tr><td>Oct 01</td><td>9:00 AM</td><td><b>Home &rarr; Harbor Logistics</b></td><td><i class="dot" style="background:#2F6FE0"></i>Client meeting</td><td class="num">24,118.0</td><td class="num">21.4</td><td class="num"><b>$15.51</b></td></tr><tr><td>Oct 01</td><td>1:30 PM</td><td><b>Riverside Clinic &rarr; Patient visit, Green Lake</b></td><td><i class="dot" style="background:#2F6FE0"></i>Home visit</td><td class="num">24,141.8</td><td class="num">5.9</td><td class="num"><b>$4.28</b></td></tr><tr><td>Oct 02</td><td>10:00 AM</td><td><b>Home &rarr; Northside Medical</b></td><td><i class="dot" style="background:#D93A4C"></i>Medical appointment</td><td class="num">24,154.6</td><td class="num">5.9</td><td class="num"><b>$1.21</b></td></tr><tr><td>Oct 02</td><td>6:10 PM</td><td><b>Office &rarr; Grocery store</b></td><td><i class="dot" style="background:#8A8274"></i>Personal</td><td class="num">24,167.0</td><td class="num">2.8</td><td class="num"><b>&ndash;</b></td></tr><tr><td>Oct 05</td><td>10:00 AM</td><td><b>Home &rarr; Northside Medical</b></td><td><i class="dot" style="background:#D93A4C"></i>Medical appointment</td><td class="num">24,178.8</td><td class="num">5.2</td><td class="num"><b>$1.07</b></td></tr><tr><td>Oct 05</td><td>1:30 PM</td><td><b>Riverside Clinic &rarr; Patient visit, Green Lake</b></td><td><i class="dot" style="background:#2F6FE0"></i>Home visit</td><td class="num">24,191.8</td><td class="num">6.3</td><td class="num"><b>$4.57</b></td></tr><tr><td>Oct 06</td><td>8:10 AM</td><td><b>Home &rarr; Riverside Clinic</b></td><td><i class="dot" style="background:#2F6FE0"></i>Clinic shift</td><td class="num">24,202.1</td><td class="num">11.9</td><td class="num"><b>$8.63</b></td></tr><tr><td>Oct 06</td><td>1:30 PM</td><td><b>Riverside Clinic &rarr; Patient visit, Green Lake</b></td><td><i class="dot" style="background:#2F6FE0"></i>Home visit</td><td class="num">24,218.7</td><td class="num">6.3</td><td class="num"><b>$4.57</b></td></tr><tr><td>Oct 07</td><td>10:00 AM</td><td><b>Home &rarr; Northside Medical</b></td><td><i class="dot" style="background:#D93A4C"></i>Medical appointment</td><td class="num">24,231.7</td><td class="num">5.5</td><td class="num"><b>$1.13</b></td></tr><tr><td>Oct 07</td><td>6:10 PM</td><td><b>Office &rarr; Grocery store</b></td><td><i class="dot" style="background:#8A8274"></i>Personal</td><td class="num">24,239.4</td><td class="num">2.8</td><td class="num"><b>&ndash;</b></td></tr><tr><td>Oct 08</td><td>9:30 AM</td><td><b>Home &rarr; Community Food Bank</b></td><td><i class="dot" style="background:#7A4FD6"></i>Volunteer shift</td><td class="num">24,247.4</td><td class="num">8.3</td><td class="num"><b>$1.16</b></td></tr><tr><td>Oct 08</td><td>10:00 AM</td><td><b>Home &rarr; Northside Medical</b></td><td><i class="dot" style="background:#D93A4C"></i>Medical appointment</td><td class="num">24,258.9</td><td class="num">5.9</td><td class="num"><b>$1.21</b></td></tr><tr><td>Oct 09</td><td>8:10 AM</td><td><b>Home &rarr; Riverside Clinic</b></td><td><i class="dot" style="background:#2F6FE0"></i>Clinic shift</td><td class="num">24,267.6</td><td class="num">11.9</td><td class="num"><b>$8.63</b></td></tr><tr><td>Oct 09</td><td>4:45 PM</td><td><b>Harbor Logistics &rarr; Office</b></td><td><i class="dot" style="background:#2F6FE0"></i>Return to office</td><td class="num">24,281.9</td><td class="num">15.2</td><td class="num"><b>$11.02</b></td></tr><tr><td>Oct 12</td><td>1:30 PM</td><td><b>Riverside Clinic &rarr; Patient visit, Green Lake</b></td><td><i class="dot" style="background:#2F6FE0"></i>Home visit</td><td class="num">24,304.5</td><td class="num">6.0</td><td class="num"><b>$4.35</b></td></tr><tr><td>Oct 12</td><td>6:10 PM</td><td><b>Office &rarr; Grocery store</b></td><td><i class="dot" style="background:#8A8274"></i>Personal</td><td class="num">24,313.4</td><td class="num">3.0</td><td class="num"><b>&ndash;</b></td></tr><tr><td>Oct 13</td><td>8:10 AM</td><td><b>Home &rarr; Riverside Clinic</b></td><td><i class="dot" style="background:#2F6FE0"></i>Clinic shift</td><td class="num">24,320.1</td><td class="num">12.2</td><td class="num"><b>$8.84</b></td></tr><tr><td>Oct 13</td><td>10:00 AM</td><td><b>Home &rarr; Northside Medical</b></td><td><i class="dot" style="background:#D93A4C"></i>Medical appointment</td><td class="num">24,337.0</td><td class="num">6.2</td><td class="num"><b>$1.27</b></td></tr><tr><td>Oct 14</td><td>8:10 AM</td><td><b>Home &rarr; Riverside Clinic</b></td><td><i class="dot" style="background:#2F6FE0"></i>Clinic shift</td><td class="num">24,351.3</td><td class="num">12.6</td><td class="num"><b>$9.13</b></td></tr><tr><td>Oct 14</td><td>1:30 PM</td><td><b>Riverside Clinic &rarr; Patient visit, Green Lake</b></td><td><i class="dot" style="background:#2F6FE0"></i>Home visit</td><td class="num">24,366.5</td><td class="num">6.5</td><td class="num"><b>$4.71</b></td></tr><tr><td>Oct 15</td><td>8:10 AM</td><td><b>Home &rarr; Riverside Clinic</b></td><td><i class="dot" style="background:#2F6FE0"></i>Clinic shift</td><td class="num">24,378.1</td><td class="num">11.9</td><td class="num"><b>$8.63</b></td></tr><tr><td>Oct 15</td><td>9:00 AM</td><td><b>Home &rarr; Harbor Logistics</b></td><td><i class="dot" style="background:#2F6FE0"></i>Client meeting</td><td class="num">24,395.8</td><td class="num">21.6</td><td class="num"><b>$15.66</b></td></tr><tr><td>Oct 16</td><td>8:10 AM</td><td><b>Home &rarr; Riverside Clinic</b></td><td><i class="dot" style="background:#2F6FE0"></i>Clinic shift</td><td class="num">24,425.6</td><td class="num">12.0</td><td class="num"><b>$8.70</b></td></tr><tr><td>Oct 16</td><td>10:00 AM</td><td><b>Home &rarr; Northside Medical</b></td><td><i class="dot" style="background:#D93A4C"></i>Medical appointment</td><td class="num">24,445.3</td><td class="num">6.0</td><td class="num"><b>$1.23</b></td></tr><tr><td>Oct 19</td><td>9:00 AM</td><td><b>Home &rarr; Harbor Logistics</b></td><td><i class="dot" style="background:#2F6FE0"></i>Client meeting</td><td class="num">24,459.3</td><td class="num">22.0</td><td class="num"><b>$15.95</b></td></tr><tr><td>Oct 19</td><td>4:45 PM</td><td><b>Harbor Logistics &rarr; Office</b></td><td><i class="dot" style="background:#2F6FE0"></i>Return to office</td><td class="num">24,485.2</td><td class="num">14.6</td><td class="num"><b>$10.58</b></td></tr><tr><td>Oct 20</td><td>9:00 AM</td><td><b>Home &rarr; Harbor Logistics</b></td><td><i class="dot" style="background:#2F6FE0"></i>Client meeting</td><td class="num">24,504.7</td><td class="num">21.2</td><td class="num"><b>$15.37</b></td></tr><tr><td>Oct 20</td><td>6:10 PM</td><td><b>Office &rarr; Grocery store</b></td><td><i class="dot" style="background:#8A8274"></i>Personal</td><td class="num">24,530.4</td><td class="num">2.9</td><td class="num"><b>&ndash;</b></td></tr><tr><td>Oct 21</td><td>1:30 PM</td><td><b>Riverside Clinic &rarr; Patient visit, Green Lake</b></td><td><i class="dot" style="background:#2F6FE0"></i>Home visit</td><td class="num">24,541.5</td><td class="num">6.2</td><td class="num"><b>$4.50</b></td></tr><tr><td>Oct 21</td><td>6:10 PM</td><td><b>Office &rarr; Grocery store</b></td><td><i class="dot" style="background:#8A8274"></i>Personal</td><td class="num">24,556.4</td><td class="num">2.8</td><td class="num"><b>&ndash;</b></td></tr><tr><td>Oct 22</td><td>9:00 AM</td><td><b>Home &rarr; Harbor Logistics</b></td><td><i class="dot" style="background:#2F6FE0"></i>Client meeting</td><td class="num">24,562.3</td><td class="num">21.2</td><td class="num"><b>$15.37</b></td></tr><tr><td>Oct 22</td><td>4:45 PM</td><td><b>Harbor Logistics &rarr; Office</b></td><td><i class="dot" style="background:#2F6FE0"></i>Return to office</td><td class="num">24,586.7</td><td class="num">14.9</td><td class="num"><b>$10.80</b></td></tr><tr><td>Oct 23</td><td>8:10 AM</td><td><b>Home &rarr; Riverside Clinic</b></td><td><i class="dot" style="background:#2F6FE0"></i>Clinic shift</td><td class="num">24,605.2</td><td class="num">12.4</td><td class="num"><b>$8.99</b></td></tr><tr><td>Oct 23</td><td>6:10 PM</td><td><b>Office &rarr; Grocery store</b></td><td><i class="dot" style="background:#8A8274"></i>Personal</td><td class="num">24,621.2</td><td class="num">2.9</td><td class="num"><b>&ndash;</b></td></tr><tr><td>Oct 26</td><td>9:00 AM</td><td><b>Home &rarr; Harbor Logistics</b></td><td><i class="dot" style="background:#2F6FE0"></i>Client meeting</td><td class="num">24,629.5</td><td class="num">22.0</td><td class="num"><b>$15.95</b></td></tr><tr><td>Oct 26</td><td>1:30 PM</td><td><b>Riverside Clinic &rarr; Patient visit, Green Lake</b></td><td><i class="dot" style="background:#2F6FE0"></i>Home visit</td><td class="num">24,657.6</td><td class="num">6.3</td><td class="num"><b>$4.57</b></td></tr><tr><td>Oct 27</td><td>8:10 AM</td><td><b>Home &rarr; Riverside Clinic</b></td><td><i class="dot" style="background:#2F6FE0"></i>Clinic shift</td><td class="num">24,667.7</td><td class="num">12.5</td><td class="num"><b>$9.06</b></td></tr><tr><td>Oct 27</td><td>9:30 AM</td><td><b>Home &rarr; Community Food Bank</b></td><td><i class="dot" style="background:#7A4FD6"></i>Volunteer shift</td><td class="num">24,682.2</td><td class="num">8.1</td><td class="num"><b>$1.13</b></td></tr><tr><td>Oct 28</td><td>9:00 AM</td><td><b>Home &rarr; Harbor Logistics</b></td><td><i class="dot" style="background:#2F6FE0"></i>Client meeting</td><td class="num">24,695.2</td><td class="num">21.3</td><td class="num"><b>$15.44</b></td></tr><tr><td>Oct 28</td><td>6:10 PM</td><td><b>Office &rarr; Grocery store</b></td><td><i class="dot" style="background:#8A8274"></i>Personal</td><td class="num">24,721.1</td><td class="num">3.1</td><td class="num"><b>&ndash;</b></td></tr><tr><td>Oct 29</td><td>10:00 AM</td><td><b>Home &rarr; Northside Medical</b></td><td><i class="dot" style="background:#D93A4C"></i>Medical appointment</td><td class="num">24,730.2</td><td class="num">5.3</td><td class="num"><b>$1.09</b></td></tr><tr><td>Oct 29</td><td>4:45 PM</td><td><b>Harbor Logistics &rarr; Office</b></td><td><i class="dot" style="background:#2F6FE0"></i>Return to office</td><td class="num">24,744.2</td><td class="num">15.0</td><td class="num"><b>$10.88</b></td></tr><tr><td>Oct 30</td><td>8:10 AM</td><td><b>Home &rarr; Riverside Clinic</b></td><td><i class="dot" style="background:#2F6FE0"></i>Clinic shift</td><td class="num">24,766.0</td><td class="num">12.4</td><td class="num"><b>$8.99</b></td></tr><tr><td>Oct 30</td><td>9:00 AM</td><td><b>Home &rarr; Harbor Logistics</b></td><td><i class="dot" style="background:#2F6FE0"></i>Client meeting</td><td class="num">24,784.0</td><td class="num">21.7</td><td class="num"><b>$15.73</b></td></tr></tbody>
+      <tfoot><tr><td colspan="5">October total &middot; 44 trips</td><td>462.1</td><td>$289.91</td></tr></tfoot>
+    </table></div>
+    <footer><span>Made with MileTracker</span><span>Page 2 of 2</span></footer>
+  </div>
+  <p class="muted center no-print" style="font-size:14px">Reports also export as CSV and Excel. Accountants can get a <a href="accountants.html">live link</a> instead.</p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><img src="img/app-icon.png" alt="" width="32" height="32">MileTracker</a>
+        <p>Automatic mileage tracking for people who drive for work. Made by Essential Dev Team (Dumitru Bumbu).</p>
+      </div>
+      <div><h4>App</h4><ul>
+        <li><a href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735">App Store</a></li>
+        <li><a href="get-started.html">Savings estimate</a></li>
+        <li><a href="sample-report.html">Sample report</a></li>
+        <li><a href="accountants.html">For accountants</a></li>
+      </ul></div>
+      <div><h4>Learn</h4><ul>
+        <li><a href="blog/irs-mileage-rules.html">IRS mileage rules 2026</a></li>
+        <li><a href="support.html">Help &amp; FAQ</a></li>
+        <li><a href="press/index.html">Press kit</a></li>
+      </ul></div>
+      <div><h4>Legal</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="mailto:essentialdevteam@gmail.com">essentialdevteam@gmail.com</a></li>
+      </ul></div>
+    </div>
+    <div class="legal"><span>&copy; 2026 Essential Dev Team. All rights reserved.</span><span>MileTracker is a record-keeping tool, not tax advice. Talk to a tax professional about your situation.</span></div>
+  </div>
+</footer>
+</body>
+</html>

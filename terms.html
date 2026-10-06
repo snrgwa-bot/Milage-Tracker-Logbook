@@ -1,390 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - MileTracker</title>
-    <meta name="description" content="MileTracker Terms of Service. Read our terms and conditions for using the app.">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.8;
-            color: #1a1a1a;
-            background: #f8fafc;
-        }
-        
-        /* Navigation */
-        nav {
-            background: white;
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #3B82F6;
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: #1a1a1a;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #666;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #3B82F6;
-        }
-        
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            color: white;
-        }
-        
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .header p {
-            opacity: 0.9;
-        }
-        
-        /* Content */
-        .content {
-            max-width: 800px;
-            margin: 2rem auto 4rem;
-            padding: 0 1rem;
-        }
-        
-        .terms-card {
-            background: white;
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .terms-card h2 {
-            color: #1a1a1a;
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e5e7eb;
-        }
-        
-        .terms-card h2:first-of-type {
-            margin-top: 0;
-            padding-top: 0;
-            border-top: none;
-        }
-        
-        .terms-card p {
-            color: #4b5563;
-            margin-bottom: 1rem;
-        }
-        
-        .terms-card ul, .terms-card ol {
-            color: #4b5563;
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .terms-card li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .terms-card strong {
-            color: #1a1a1a;
-        }
-        
-        .last-updated {
-            background: #f0f9ff;
-            border-left: 4px solid #3B82F6;
-            padding: 1rem 1.5rem;
-            margin-bottom: 2rem;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .last-updated p {
-            margin: 0;
-            color: #1e40af;
-        }
-        
-        .highlight-box {
-            background: #fef3c7;
-            border-left: 4px solid #f59e0b;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .highlight-box p {
-            margin: 0;
-            color: #92400e;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        footer a {
-            color: #9ca3af;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        
-        footer a:hover {
-            color: #3B82F6;
-        }
-        
-        footer p {
-            margin-top: 1rem;
-            color: #666;
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .terms-card {
-                padding: 1.5rem;
-            }
-        }
-    
-        /* Large displays: widen the nav shell and scale the root font size so
-           the page does not read as a narrow column adrift in empty space on
-           a 2560px monitor. The body copy keeps a deliberately narrow measure
-           — long legal text at full width is worse than the original
-           problem. */
-        @media (min-width: 1500px) {
-            :root { font-size: 17.5px; }
-            nav .container { max-width: 1440px; }
-            .content { max-width: 860px; }
-        }
-        @media (min-width: 2000px) {
-            :root { font-size: 19px; }
-            nav .container { max-width: 1680px; }
-            .content { max-width: 900px; }
-        }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service | MileTracker</title>
+<meta name="description" content="Terms of Service for the MileTracker mileage tracking app.">
+<link rel="canonical" href="https://snrgwa-bot.github.io/Milage-Tracker-Logbook/terms.html">
+<meta property="og:title" content="Terms of Service | MileTracker">
+<meta property="og:description" content="Terms of Service for the MileTracker mileage tracking app.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://snrgwa-bot.github.io/Milage-Tracker-Logbook/press/social-1d.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E1220" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F5EF" media="(prefers-color-scheme: light)">
+<meta name="apple-itunes-app" content="app-id=6758228735">
+<link rel="icon" href="img/app-icon.png">
+<link rel="apple-touch-icon" href="img/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">Mile<span>Tracker</span></a>
-            <ul>
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="index.html#pricing">Pricing</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-            </ul>
-        </div>
-    </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/app-icon.png" alt="" width="32" height="32">MileTracker</a>
+    <nav class="nav" aria-label="Main"><a href="index.html#how">How it works</a><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a><a href="accountants.html">For accountants</a><a href="blog/irs-mileage-rules.html">IRS rules</a><a href="support.html">Support</a></nav>
+    <a class="btn btn-primary btn-sm" href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.54 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>Get the app</a>
+  </div>
+</header>
+<main id="main">
 
-    <!-- Header -->
-    <section class="header">
-        <h1>Terms of Service</h1>
-        <p>Please read these terms carefully before using MileTracker</p>
-    </section>
-
-    <!-- Content -->
-    <div class="content">
-        <div class="terms-card">
-            <div class="last-updated">
-                <p><strong>Last Updated:</strong> January 1, 2026</p>
-            </div>
-
-            <p>These Terms of Service ("Terms") govern your use of the MileTracker mobile application ("App") provided by Essential Dev Team ("we," "our," or "us"). By downloading, installing, or using the App, you agree to be bound by these Terms.</p>
-
-            <h2>1. Acceptance of Terms</h2>
-            
-            <p>By accessing or using MileTracker, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, do not use the App.</p>
-
-            <h2>2. Description of Service</h2>
-            
-            <p>MileTracker is a mileage tracking application that helps users:</p>
-            <ul>
-                <li>Automatically and manually track driving trips</li>
-                <li>Record mileage for tax deduction purposes</li>
-                <li>Categorize trips (Business, Medical, Charity, Personal)</li>
-                <li>Generate mileage reports</li>
-                <li>Calculate potential tax deductions using IRS standard mileage rates</li>
-            </ul>
-
-            <h2>3. Account and Subscription</h2>
-            
-            <p><strong>Free Tier:</strong> MileTracker offers a free tier with limited features (15 trips per month).</p>
-            
-            <p><strong>Premium Subscription:</strong> Additional features are available through paid subscriptions:</p>
-            <ul>
-                <li>Monthly subscription: $9.99/month</li>
-                <li>Yearly subscription: $89.99/year</li>
-            </ul>
-            
-            <p><strong>Subscription Terms:</strong></p>
-            <ul>
-                <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
-                <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period</li>
-                <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
-                <li>You can manage and cancel subscriptions in your Apple ID Account Settings</li>
-                <li>No refunds will be provided for partial subscription periods</li>
-            </ul>
-
-            <h2>4. User Responsibilities</h2>
-            
-            <p>You are responsible for:</p>
-            <ul>
-                <li>Providing accurate information when using the App</li>
-                <li>Maintaining the security of your device</li>
-                <li>Ensuring your device has adequate storage and battery for trip tracking</li>
-                <li>Verifying the accuracy of tracked trips before using data for tax purposes</li>
-                <li>Complying with all applicable laws and regulations</li>
-            </ul>
-
-            <h2>5. Tax Disclaimer</h2>
-            
-            <div class="highlight-box">
-                <p><strong>Important:</strong> MileTracker is a tracking tool only. We are not tax professionals. The mileage rates and deduction calculations provided are based on published IRS standard mileage rates but should not be considered tax advice. Always consult a qualified tax professional for advice regarding your specific tax situation.</p>
-            </div>
-            
-            <p>We do not guarantee:</p>
-            <ul>
-                <li>The accuracy of GPS-tracked distances</li>
-                <li>That your trips qualify for tax deductions</li>
-                <li>The correctness of IRS mileage rates displayed (rates may change)</li>
-                <li>Acceptance of MileTracker reports by the IRS or any tax authority</li>
-            </ul>
-
-            <h2>6. Accuracy and Limitations</h2>
-            
-            <p>While we strive to provide accurate mileage tracking:</p>
-            <ul>
-                <li>GPS accuracy depends on environmental factors and device capabilities</li>
-                <li>Automatic trip detection may occasionally miss trips or record unintended trips</li>
-                <li>You should review and verify all tracked trips</li>
-                <li>We recommend keeping backup records of your mileage</li>
-            </ul>
-
-            <h2>7. Intellectual Property</h2>
-            
-            <p>The App, including its design, features, content, and code, is owned by Essential Dev Team and protected by intellectual property laws. You may not:</p>
-            <ul>
-                <li>Copy, modify, or distribute the App</li>
-                <li>Reverse engineer or attempt to extract source code</li>
-                <li>Use the App for any commercial purpose without authorization</li>
-                <li>Remove any copyright or proprietary notices</li>
-            </ul>
-
-            <h2>8. Limitation of Liability</h2>
-            
-            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
-            <ul>
-                <li>The App is provided "as is" without warranties of any kind</li>
-                <li>We are not liable for any indirect, incidental, special, or consequential damages</li>
-                <li>We are not liable for any loss of data, profits, or tax benefits</li>
-                <li>Our total liability shall not exceed the amount you paid for the App in the past 12 months</li>
-            </ul>
-
-            <h2>9. Indemnification</h2>
-            
-            <p>You agree to indemnify and hold harmless Essential Dev Team from any claims, damages, or expenses arising from your use of the App or violation of these Terms.</p>
-
-            <h2>10. Termination</h2>
-            
-            <p>We may terminate or suspend your access to the App at any time, without prior notice, for conduct that we believe violates these Terms or is harmful to other users or us.</p>
-            
-            <p>You may stop using the App at any time. Deleting the App will remove all local data from your device.</p>
-
-            <h2>11. Changes to Terms</h2>
-            
-            <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes through the App or via email. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
-
-            <h2>12. Governing Law</h2>
-            
-            <p>These Terms are governed by and construed in accordance with the laws of the United States, without regard to conflict of law principles.</p>
-
-            <h2>13. Dispute Resolution</h2>
-            
-            <p>Any disputes arising from these Terms or use of the App shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association. You waive any right to participate in a class action lawsuit.</p>
-
-            <h2>14. Severability</h2>
-            
-            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
-
-            <h2>15. Contact Information</h2>
-            
-            <p>For questions about these Terms, please contact us:</p>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:essentialdevteam@gmail.com">essentialdevteam@gmail.com</a></li>
-                <li><strong>Website:</strong> <a href="https://essentialdevteam.com">essentialdevteam.com</a></li>
-            </ul>
-
-            <h2>16. Apple-Specific Terms</h2>
-            
-            <p>If you downloaded MileTracker from the Apple App Store:</p>
-            <ul>
-                <li>These Terms are between you and Essential Dev Team, not Apple</li>
-                <li>Apple has no obligation to provide maintenance or support for the App</li>
-                <li>Apple is not responsible for any claims related to the App</li>
-                <li>Apple and its subsidiaries are third-party beneficiaries of these Terms</li>
-            </ul>
-        </div>
+<div class="wrap doc-hero"><p class="eyebrow">Legal</p><h1>Terms of Service</h1><p>Please read these terms carefully before using MileTracker. Last updated: October 5, 2026</p></div>
+<div class="wrap"><div class="doc">
+<p>These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the MileTracker mobile application (&ldquo;App&rdquo;) provided by Essential Dev Team (&ldquo;we&rdquo;, &ldquo;our&rdquo; or &ldquo;us&rdquo;). By downloading, installing or using the App, you agree to be bound by these Terms.</p>
+<h2>1. Acceptance of Terms</h2>
+<p>By accessing or using MileTracker, you agree to these Terms and our <a href="privacy.html">Privacy Policy</a>. If you do not agree, do not use the App.</p>
+<h2>2. Description of Service</h2>
+<p>MileTracker is a mileage tracking application that helps users:</p>
+<ul><li>Automatically and manually track driving trips</li><li>Record mileage for tax deduction purposes</li><li>Categorize trips (Business, Medical, Charity, Personal)</li><li>Generate mileage reports and share them, including through an optional accountant live link</li><li>Calculate potential tax deductions using IRS standard mileage rates</li></ul>
+<h2>3. Account and Subscription</h2>
+<p><strong>Free tier:</strong> MileTracker offers a free tier with limited features (15 trips per month).</p>
+<p><strong>Premium subscription:</strong> additional features are available through auto-renewing subscriptions purchased in the App: weekly, monthly ($5.99/month in the US) and yearly ($49.99/year in the US). Monthly and yearly plans may include a 7-day free trial. Prices can vary by region and may change; the price shown in the App and on the App Store at the time of purchase applies.</p>
+<p><strong>Subscription terms:</strong></p>
+<ul><li>Payment is charged to your Apple ID account at confirmation of purchase, or when a free trial ends</li><li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period</li><li>Your account is charged for renewal within 24 hours before the end of the current period</li><li>You can manage and cancel subscriptions in your Apple ID account settings</li><li>Any unused portion of a free trial is forfeited when you purchase a subscription</li><li>Refunds are handled by Apple under its policies</li></ul>
+<h2>4. User Responsibilities</h2>
+<p>You are responsible for:</p>
+<ul><li>Providing accurate information when using the App</li><li>Maintaining the security of your device and of any accountant links you share</li><li>Ensuring your device has adequate storage and battery for trip tracking</li><li>Verifying the accuracy of tracked trips before using data for tax purposes</li><li>Complying with all applicable laws and regulations, including not using the App while driving in an unsafe way</li></ul>
+<h2>5. Tax Disclaimer</h2>
+<p><strong>Important:</strong> MileTracker is a tracking tool only. We are not tax professionals. The mileage rates and deduction calculations are based on published IRS standard mileage rates but are not tax advice. Always consult a qualified tax professional about your situation.</p>
+<p>We do not guarantee:</p>
+<ul><li>The accuracy of GPS-tracked distances</li><li>That your trips qualify for tax deductions</li><li>The correctness of IRS mileage rates displayed (rates may change)</li><li>Acceptance of MileTracker reports by the IRS or any tax authority</li></ul>
+<h2>6. Accuracy and Limitations</h2>
+<p>While we strive to provide accurate mileage tracking:</p>
+<ul><li>GPS accuracy depends on environmental factors and device capabilities</li><li>Automatic trip detection may occasionally miss trips or record unintended trips</li><li>You should review and verify all tracked trips</li><li>We recommend keeping backup records of your mileage</li></ul>
+<h2>7. Intellectual Property</h2>
+<p>The App, including its design, features, content and code, is owned by Essential Dev Team and protected by intellectual property laws. You may not:</p>
+<ul><li>Copy, modify or distribute the App</li><li>Reverse engineer or attempt to extract source code</li><li>Use the App for any commercial purpose without authorization</li><li>Remove any copyright or proprietary notices</li></ul>
+<h2>8. Limitation of Liability</h2>
+<p>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
+<ul><li>The App is provided &ldquo;as is&rdquo; without warranties of any kind</li><li>We are not liable for any indirect, incidental, special or consequential damages</li><li>We are not liable for any loss of data, profits or tax benefits</li><li>Our total liability shall not exceed the amount you paid for the App in the past 12 months</li></ul>
+<h2>9. Indemnification</h2>
+<p>You agree to indemnify and hold harmless Essential Dev Team from any claims, damages or expenses arising from your use of the App or violation of these Terms.</p>
+<h2>10. Termination</h2>
+<p>We may terminate or suspend your access to the App at any time, without prior notice, for conduct that we believe violates these Terms or is harmful to other users or us. You may stop using the App at any time. Deleting the App removes its local data from your device.</p>
+<h2>11. Changes to Terms</h2>
+<p>We may modify these Terms at any time. We will notify users of significant changes through the App or on this page. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
+<h2>12. Governing Law</h2>
+<p>These Terms are governed by the laws of the United States, without regard to conflict of law principles.</p>
+<h2>13. Dispute Resolution</h2>
+<p>Any disputes arising from these Terms or use of the App shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association. You waive any right to participate in a class action lawsuit.</p>
+<h2>14. Severability</h2>
+<p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
+<h2>15. Contact Information</h2>
+<p>Email: <a href="mailto:essentialdevteam@gmail.com">essentialdevteam@gmail.com</a><br>Website: <a href="https://essentialdevteam.com">essentialdevteam.com</a></p>
+<h2>16. Apple-Specific Terms</h2>
+<p>If you downloaded MileTracker from the Apple App Store:</p>
+<ul><li>These Terms are between you and Essential Dev Team, not Apple</li><li>Apple has no obligation to provide maintenance or support for the App</li><li>Apple is not responsible for any claims related to the App</li><li>Apple and its subsidiaries are third-party beneficiaries of these Terms</li><li>Apple's standard Licensed Application End User License Agreement also applies: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">apple.com/legal/internet-services/itunes/dev/stdeula</a></li></ul>
+</div></div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><img src="img/app-icon.png" alt="" width="32" height="32">MileTracker</a>
+        <p>Automatic mileage tracking for people who drive for work. Made by Essential Dev Team (Dumitru Bumbu).</p>
+      </div>
+      <div><h4>App</h4><ul>
+        <li><a href="https://apps.apple.com/us/app/miletracker-mileage-logbook/id6758228735">App Store</a></li>
+        <li><a href="get-started.html">Savings estimate</a></li>
+        <li><a href="sample-report.html">Sample report</a></li>
+        <li><a href="accountants.html">For accountants</a></li>
+      </ul></div>
+      <div><h4>Learn</h4><ul>
+        <li><a href="blog/irs-mileage-rules.html">IRS mileage rules 2026</a></li>
+        <li><a href="support.html">Help &amp; FAQ</a></li>
+        <li><a href="press/index.html">Press kit</a></li>
+      </ul></div>
+      <div><h4>Legal</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="mailto:essentialdevteam@gmail.com">essentialdevteam@gmail.com</a></li>
+      </ul></div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <div>
-            <a href="index.html">Home</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="mailto:essentialdevteam@gmail.com">Contact</a>
-        </div>
-        <p>© 2026 MileTracker. All rights reserved.</p>
-    </footer>
+    <div class="legal"><span>&copy; 2026 Essential Dev Team. All rights reserved.</span><span>MileTracker is a record-keeping tool, not tax advice. Talk to a tax professional about your situation.</span></div>
+  </div>
+</footer>
 </body>
 </html>
